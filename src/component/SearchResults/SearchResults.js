@@ -1,6 +1,11 @@
 import ReactPlayer from 'react-player'
 import './SearchResults.css';
 import {FlashcardComponent} from 'react-flashcard'
+import {FiSearch} from 'react-icons/fi'
+import {Form} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
+import {Container, Button} from 'react-bootstrap';
 
 
 const cardData = [
@@ -45,35 +50,64 @@ const cardData = [
 
 
 const SearchResults = (prop) => {
+
+  const navigate = useNavigate()
+
+  const handleLogin =()=>{
+    //console.log("Hello Login");
+    navigate("/login",{replace:true})
+  }
     
     return(
         <>
-            <div style = {{marginTop:"20px"}}>
-                <div>
+         
+            <Container className='home' style={{marginTop:"50px"}}>            
+
+                <div className="SearchContainer" class="d-flex justify-content-center">
+                  <Form className='home-searchbar'>
+                    
+                      <Form.Control  style={{width:"800px"}} value={"Uber"} type="text" placeholder="Search here" />           
+                            
+                  </Form>
+                </div>   
+                
+                &nbsp;
+                &nbsp;
+
+                <div className="SearchContainer" class="d-flex justify-content-center">
+                    
+                  <button style={{height:"40px", width:"40px"}}> 
+                    <FiSearch style={{height:"25px", width:"25px"}}/>
+                  </button>
+              
+                </div>   
+                
+            </Container>
+
+
+            <div className='parent' style = {{marginTop:"20px"}}>
+                
+                <div className='child' style={{marginTop:"80px"}}>
                     <h3 style={{}}> 1. Picture  solution</h3>
-                    <div className="home-1">
-                        
 
-                   <FlashcardComponent dataSource={cardData} />
-
-                    
-                    
-                    
-                        {/* <Cards  source = "./img/1.jpeg" text ="Open the application and click on where to go"/>
-                        <Cards  source = "./img/2.jpeg" text  = "select the location where you want to go"/>
-                        <Cards  source = "./img/3.jpeg" text = "select the car type and you will able to see the amount"/>
-                 <Cards source = "./img/4.jpeg" text = " click on confirm your pickup"/> */}
-
+                    <div className="home-1">         
+                       <FlashcardComponent dataSource={cardData} />                    
                     </div>
                 </div>
-                <div style={{marginTop:"20px"}}>
+
+                <div className='child' style={{marginTop:"-57px"}}>
                     <h3>2. video solution</h3>
                     <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" />
                 </div>
+
                 <div style={{marginTop:"20px"}}>
-                    <h3>3. Talk with expert</h3>
-                    <button>Talk with expert</button>
+                    <h3>3. Still confused?
+                      &nbsp;
+                      &nbsp;
+                      <Button style={{backgroundColor:"#15BAEB", height:"40px",fontSize:"20px", border:"2px solid black"}} onClick={handleLogin}>Talk with an expert</Button>
+                    </h3>
                 </div>
+
             </div>
         
             
