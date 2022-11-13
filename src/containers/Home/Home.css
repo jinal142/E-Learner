@@ -1,0 +1,42 @@
+.home-image{
+    width:250px;
+    margin-top: 25px;
+}
+
+.home-searchBar{
+    width: 500px;
+    margin-top: 500px;
+}
+
+.home-howWeWork{
+    background-color: aqua;
+}
+
+.container-input{
+    display:flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.SearchContainer, .ButtonContainer{
+    
+    justify-content: center;
+    width: 850px;
+    margin-top: 40px;
+}
+
+.ButtonHome {
+    width: 150px;
+    border-radius: 0px!important;
+}
+.Input {
+    min-width: 450px!important;
+    border: 1px solid #d9534f!important;
+}
