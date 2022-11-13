@@ -21,7 +21,7 @@ const SignUp = () => {
   }
 
     const handleSubmit = () => {
-        navigate("/list_of_experts", { replace: true })
+        navigate("/bookappoitment", { replace: true })
   }
 
   const formHandler = (event) => {

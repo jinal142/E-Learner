@@ -8,6 +8,7 @@ import {Container, Form} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CardHome from '../../component/CardHome/CardHome';
 import { Input, Button } from 'antd'
+import Header from '../../component/Header';
 
 
 const Home = () => {
@@ -44,7 +45,9 @@ const Home = () => {
 
 
   return (
-    <div style={{backgroundColor:'azure'}}>
+    <>
+        <Header/>
+        <div style={{backgroundColor:'azure'}}>
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
@@ -112,6 +115,8 @@ const Home = () => {
         
 
     </div>
+    </>
+    
     
   )
 }
