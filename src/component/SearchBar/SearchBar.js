@@ -1,23 +1,23 @@
 import React, {useState, useEffect } from 'react';
 import {FiSearch} from 'react-icons/fi'
 import { Home } from '../../containers/Home/Home';
-import SearchResults from '../SearchResults/SearchResults';
+
+import {Container, Form} from 'react-bootstrap';
 import './SearchBar.css';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () =>{
     const [search, setSearch] = useState("");
-    const [display, setDisplay] = useState(false);
-
-    useEffect(() => {
-      console.log(display)
-    }, [])
+    //const [display, setDisplay] = useState(false);
+    const navigate = useNavigate()
+    
     
     
     const  handlSearch = () => {
 
-        if(search === "uber"){
-            setDisplay(true);
-        }
+            navigate("/results",{ state : {search} },{replace:true})
+            
+        
     }
 
     const handleSearchChnage = (e) => {
@@ -35,27 +35,30 @@ const SearchBar = () =>{
              handlSearch();
         }
     }
-
-    return( 
-        <>
-                <div className='container-input'>
-                
-                    <input 
-                    value={search}
-                    type='text' 
-                    placeholder = 'What do you want to search here?' 
-                    onChange={(e) => {handleSearchChnage(e)}}
-                    onKeyDown={(e)=>handleEnter(e)}
-                    />
-                    <button onClick={handlSearch}> <FiSearch/></button>
-                
-                </div>            
+   return(
+    <Container className='home' style={{marginTop:"50px"}}>
             
 
-            {/* {  !display ?  <Home />  : <SearchResults text ={search}/>}          */}
-            {/* { display ? <p></p> : <SearchResults text={search} />}            */}
-        </>
-    );
+            <div className="SearchContainer" class="d-flex justify-content-center">
+                <Form className='home-searchbar'>
+                        <Form.Control  style={{width:"800px"}} onChange={(e) => {handleSearchChnage(e)}} 
+                            onKeyDown={(e)=>handleEnter(e)} value={search} type="text" placeholder="Search here" />           
+                        
+                </Form>
+            </div>    
+            &nbsp;
+            &nbsp;
+            <div className="SearchContainer" class="d-flex justify-content-center">
+                
+                    <button onClick={handlSearch} style={{height:"40px", width:"40px"}}> 
+                        <FiSearch style={{height:"25px", width:"25px"}}/>
+                    </button>
+           
+            </div>    
+
+            
+        </Container>
+   )
 
 }
 

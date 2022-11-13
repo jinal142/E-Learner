@@ -9,39 +9,40 @@ import { useNavigate } from 'react-router-dom';
 import CardHome from '../../component/CardHome/CardHome';
 import { Input, Button } from 'antd'
 import Header from '../../component/Header';
+import SearchBar from '../../component/SearchBar/SearchBar';
 
 
 const Home = () => {
 
-    const [search, setSearch] = useState("");
-    //const [display, setDisplay] = useState(false);
-    const navigate = useNavigate()
+    // const [search, setSearch] = useState("");
+    // //const [display, setDisplay] = useState(false);
+    // const navigate = useNavigate()
     
     
     
-    const  handlSearch = () => {
+    // const  handlSearch = () => {
 
-        if(search === "uber"){
-            navigate("/results",{replace:true})
+    //     if(search === "uber"){
+    //         navigate("/results",{replace:true})
             
-        }
-    }
+    //     }
+    // }
 
-    const handleSearchChnage = (e) => {
-        // console.log(e.target.value);
-        setSearch(e.target.value);
-        // console.log(e.key)
+    // const handleSearchChnage = (e) => {
+    //     // console.log(e.target.value);
+    //     setSearch(e.target.value);
+    //     // console.log(e.key)
         
         
-    };
+    // };
 
-    const handleEnter = (e) =>{
+    // const handleEnter = (e) =>{
     
-        if(e.key === "Enter"){
-            // console.log(e.target.value)
-             handlSearch();
-        }
-    }
+    //     if(e.key === "Enter"){
+    //         // console.log(e.target.value)
+    //          handlSearch();
+    //     }
+    // }
 
 
   return (
@@ -51,8 +52,9 @@ const Home = () => {
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
+        <SearchBar/>
 
-        <Container className='home' style={{marginTop:"50px"}}>
+        {/* <Container className='home' style={{marginTop:"50px"}}>
             
 
             <div className="SearchContainer" class="d-flex justify-content-center">
@@ -73,7 +75,7 @@ const Home = () => {
             </div>    
 
             
-        </Container>
+        </Container> */}
 
         {/* <Container className='home'>
                 
