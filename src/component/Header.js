@@ -38,7 +38,7 @@ const Header = (props) => {
                             <Dropdown.Item href="#/action-1"><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
                             <Dropdown.Item href="#/action-2"><AiOutlineHistory/>My History</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
-                            <Dropdown.Item href="#/action-3"><MdLogout/>Logout</Dropdown.Item>  
+                            <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
                     </Dropdown> : <Nav><Nav.Link as ={Link} to ="/login">Login</Nav.Link></Nav>
                   
