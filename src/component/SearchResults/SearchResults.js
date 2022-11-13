@@ -6,6 +6,7 @@ import {Form} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import {Container, Button} from 'react-bootstrap';
+import Header from '../Header';
 
 
 const cardData = [
@@ -60,7 +61,7 @@ const SearchResults = (prop) => {
     
     return(
         <>
-         
+            <Header/>
             <Container className='home' style={{marginTop:"50px"}}>            
 
                 <div className="SearchContainer" class="d-flex justify-content-center">

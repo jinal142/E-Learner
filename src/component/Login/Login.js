@@ -6,6 +6,7 @@ import { message } from 'antd';
 
 //import Server from  '../../../resources/sources'
 import './Login.css'
+import Header from '../Header';
 
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
   };
 
   const onLogoClick = () => {
-    navigate("/", { replace: true })
+    navigate("/bookappoitment", { replace: true })
   }
 
   const goToSignUp = () => {
@@ -46,7 +47,9 @@ const Login = () => {
   }
 
   return (
-    <Container fluid className='PageContainer'>
+    <>
+      <Header/>
+      <Container fluid className='PageContainer'>
       <div className="FormContainer d-flex justify-content-center align-items-center">
 
         <Form className="rounded p-4 p-sm-3" onSubmit={ formHandler }>
@@ -60,7 +63,7 @@ const Login = () => {
           </Form.Group>
 
           
-          <Button style={{backgroundColor:"#15BAEB",width:"100px", height:"40px",fontSize:"20px" }} type="submit">
+          <Button style={{backgroundColor:"#15BAEB",width:"100px", height:"40px",fontSize:"20px" }} type="submit" onClick= {()=> navigate('/bookappoitment',{replace : true})}>
             Login
           </Button>
 
@@ -74,6 +77,8 @@ const Login = () => {
 
       </div>
     </Container>
+    </>
+   
   )
 } 
 export default Login;

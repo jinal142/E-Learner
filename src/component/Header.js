@@ -9,7 +9,7 @@ import {FaRegCalendarTimes} from 'react-icons/fa';
 import { Dropdown} from 'react-bootstrap';
 import {MdLogout} from 'react-icons/md';
 
-export const Header = () => {
+const Header = (props) => {
   return (
     <div>
         <>
@@ -27,8 +27,9 @@ export const Header = () => {
             {/* <div>              
                 <FaUserCircle  style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/>
             </div>   */}
-            <div>    
-                    <Dropdown>  
+            <div> 
+                  {props.path === '/bookappoitment'?
+                  <Dropdown>  
                         <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>
                         </Dropdown.Toggle>  
@@ -39,7 +40,10 @@ export const Header = () => {
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
-                    </Dropdown> 
+                    </Dropdown> : <Nav><Nav.Link as ={Link} to ="/login">Login</Nav.Link></Nav>
+                  
+                  }   
+                    
 
                     
                 </div>
@@ -48,3 +52,5 @@ export const Header = () => {
     </div>
   )
 }
+
+export default Header;
