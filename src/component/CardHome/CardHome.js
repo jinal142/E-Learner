@@ -1,9 +1,10 @@
 import Card from 'react-bootstrap/Card';
-
+import './CardHome.css';
  const CardHome = (prop) => {
     return(
         <div>
-             <Card style={{ width: '18rem' }}>
+             <Card className='card-home-style' style={{ width: '18rem', height:'300px', marginTop: '40px',
+    marginLeft: '50px', backgroundColor: 'aqua' }}>
                 <Card.Body>
                     <Card.Title>{prop.title}</Card.Title>
                     <Card.Img variant="top" src={prop.source} />
