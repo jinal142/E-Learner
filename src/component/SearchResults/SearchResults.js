@@ -2,48 +2,41 @@ import ReactPlayer from 'react-player'
 import './SearchResults.css';
 import {FlashcardComponent} from 'react-flashcard'
 import {FiSearch} from 'react-icons/fi'
-import {Form} from 'react-bootstrap';
+import {Row,Col, Form} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 import {Container, Button} from 'react-bootstrap';
+import Cards from '../FlashCards/Cards';
 import Header from '../Header';
 
 
-const cardData = [
+const fields = [
   {
-    front: {
+    fields: {
       
-      image: "./img/1.jpeg",
-    },
-    back: {
-      text: "Camping",
+      side1: "./img/1.jpeg",
+      side2: "step1"
     }
   },
   {
-  front: {
-    
-    image: "./img/2.jpeg",
-  },
-  back: {
-    text: "Camping",
+    fields: {
+      
+      side1: "./img/2.jpeg",
+      side2: "camping"
+    }
+},
+{
+  fields: {
+      
+    side1: "./img/3.jpeg",
+    side2: "camping"
   }
 },
 {
-  front: {
-    
-    image: "./img/3.jpeg",
-  },
-  back: {
-    text: "Camping",
-  }
-},
-{
-  front: {
-    
-    image: "./img/4.jpeg",
-  },
-  back: {
-    text: "Camping",
+  fields: {
+      
+    side1: "./img/4.jpeg",
+    side2: "camping"
   }
 }
 
@@ -86,32 +79,34 @@ const SearchResults = (prop) => {
             </Container>
 
 
-            <div className='parent' style = {{marginTop:"20px"}}>
+            <Container  style = {{marginTop:"20px"}}>
                 
-                <div className='child' style={{marginTop:"80px"}}>
-                    <h3 style={{}}> 1. Picture  solution</h3>
+                <Row  style={{marginTop:"80px"}}>
+                  <Col md={4} sm={4} lg={4}>
+                  <h3 style={{}}> 1. Picture  solution</h3>
+                  <div className="home-1">         
+                    {/* <FlashcardComponent style = {{width: '100%', height:'100%'}}dataSource={cardData} />       
+                                  */}
+                    <Cards dataSource = {fields}/>
+                  </div>
 
-                    <div className="home-1">         
-                       <FlashcardComponent dataSource={cardData} />                    
-                    </div>
-                </div>
-
-                <div className='child' style={{marginTop:"-57px"}}>
+                  </Col>
+                  <Col md={2} sm={2} lg={2}></Col>
+                    <Col  md={4} sm={4} lg={4}>
+                   
                     <h3>2. video solution</h3>
+                    <div className='video'>
                     <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" />
-                </div>
-
-                <div style={{marginTop:"20px"}}>
+                    </div>
+                    <div style={{marginTop:"100px", display: "flex", justifyContent:"space-between"}}>
                     <h3>3. Still confused?
-                      &nbsp;
-                      &nbsp;
-                      <Button style={{backgroundColor:"#15BAEB", height:"40px",fontSize:"20px", border:"2px solid black"}} onClick={handleLogin}>Talk with an expert</Button>
+                    <Button className = "Button" onClick={handleLogin}>Talk with an expert</Button>
                     </h3>
+                    
                 </div>
-
-            </div>
-        
-            
+                </Col>
+                </Row> 
+            </Container>
         </>
     );
 }
