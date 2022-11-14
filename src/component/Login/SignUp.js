@@ -6,6 +6,7 @@ import { message } from 'antd';
 
 //import Server from  '../../../resources/sources'
 import './Login.css'
+import Header from '../Header';
 
 
 const SignUp = () => {
@@ -46,7 +47,9 @@ const SignUp = () => {
   }
 
   return (
-    <Container fluid className='PageContainer'>
+    <>
+      <Header/>
+      <Container fluid className='PageContainer'>
       <div className="FormContainer d-flex justify-content-center align-items-center">
 
         <Form className="rounded p-4 p-sm-3" onSubmit={ formHandler }>
@@ -79,6 +82,8 @@ const SignUp = () => {
 
       </div>
     </Container>
+    </>
+
   )
 } 
 export default SignUp;
