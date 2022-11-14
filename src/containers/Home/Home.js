@@ -7,6 +7,7 @@ import {Container, Form} from 'react-bootstrap';
 //import SearchResults from '../../component/SearchResults/SearchResults';
 import { useNavigate } from 'react-router-dom';
 import CardHome from '../../component/CardHome/CardHome';
+import SolutionHome from '../../component/SolutionHome/SolutionHome';
 import { Input, Button } from 'antd'
 import Header from '../../component/Header';
 import SearchBar from '../../component/SearchBar/SearchBar';
@@ -99,16 +100,30 @@ const Home = () => {
         </Container> */}
 
         
-
+    <div style={{marginTop:"70px"}}>
+        
+        <h1 class="d-flex justify-content-center"> Solutions Offered </h1>
+        <br/>
+        <div className="home" class="d-flex justify-content-center"> 
+    
+            <SolutionHome source = "img/uber.jpeg" />
+            <SolutionHome source = "img/airbnb.png" />
+            <SolutionHome source = "img/doordash.png" />
+            <SolutionHome source = "img/venmo.jpeg" />
+            <SolutionHome source = "img/walmart.jpeg" />
+            
+        </div>
+    
+    </div>
         <div style={{marginTop:"70px"}}>
         
-            <h1 class="d-flex justify-content-center"> How do we work </h1>
+            <h1 class="d-flex justify-content-center"> How do we Work </h1>
             <br/>
             <div className="home" class="d-flex justify-content-center"> 
         
-                <CardHome style={{marginLeft:"50px"}} text = " We provide the solution in the Text form" title = "Step 1"/>&nbsp;&nbsp;
-                <CardHome style={{marginLeft:"1000px"}} text = "If it doesrnt work we you can try our video soultion" title = "Step 2"/>&nbsp;&nbsp;
-                <CardHome text = "We also provide the talk with exper option"  title = "Step 3"/>
+                <CardHome style={{marginLeft:"50px"}} text = " We provide solution in Text & Image format in Flash Cards." title = "Step 1"/>&nbsp;&nbsp;
+                <CardHome style={{marginLeft:"1000px"}} text = "We provide solution in Video format." title = "Step 2"/>&nbsp;&nbsp;
+                <CardHome text = "We provide solution directly from an expert with talk with expert."  title = "Step 3"/>
         
             </div>
         

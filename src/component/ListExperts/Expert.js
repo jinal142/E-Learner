@@ -28,16 +28,16 @@ const Expert = (props) =>{
 
 
         return(
-            <div className='expert'>
+            <div className='expert bg-info bg-gradient rounded'>
                 <div >
                     <img  className="profile-img" src= {props.src} alt = "logo"></img>
                     <p ><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></p>
                 </div>
-                <div className=''>
-                    <h5>Name: {props.name}</h5>
+                <div className='m-5'>
+                    <h3>Name: {props.name}</h3>
                     <h4> Languages: {props.lang}</h4>
-                    {props.call_val ? <p style={{color: 'green'}}>Avaialbe</p> : <p style={{color: 'red'}}>Unavaialbe</p>}
-                    <button onClick={handleShow} className='sch-btn'>Schdule an Appointments</button>
+                    {props.call_val ? <p style={{color: 'green'}}>Available</p> : <p style={{color: 'red'}}>Unavailable</p>}
+                    <button onClick={handleShow} className='btn btn-primary m-3'>Schdule an Appointments</button>
                     <Modal show ={show} onHide= {handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Schdule Appointments</Modal.Title>
@@ -65,9 +65,9 @@ const Expert = (props) =>{
 
                     </Modal>
                     {
-                        props.call_val ? <button style = {{ backgroundColor: 'green'}}><a href='https://meet.google.com/rsg-weac-fii?pli=1'>Call</a></button>:
-                        <button style={{ backgroundColor: 'red'}} onClick = {()=>{
-                            alert(props.name +" is not avaialbe, can you please Schdule an appoitment");
+                        props.call_val ? <button class="btn btn-success"><a href='https://meet.google.com/rsg-weac-fii?pli=1' class = 'a'>Call</a></button>:
+                        <button class="btn btn-danger" onClick = {()=>{
+                            alert(props.name +" is not available, can you please Schdule an appoitment");
                         }}>Call</button>
 
                     }

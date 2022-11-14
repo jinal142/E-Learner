@@ -73,7 +73,7 @@ const SearchResults = (prop) => {
             <Container className='home' style={{marginTop:"50px"}}>            
 
                 <div className="SearchContainer" class="d-flex justify-content-center">
-                  <Form className='home-searchbar'>
+                  <Form className='form-control form-control-lg form-control-borderless'>
                     
                       <Form.Control  style={{width:"800px"}} value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
                             
@@ -85,7 +85,7 @@ const SearchResults = (prop) => {
                 {console.log(msg)}
                 <div className="SearchContainer" class="d-flex justify-content-center">
                     
-                  <button style={{height:"40px", width:"40px"}}> 
+                  <button class="btn btn-lg btn-primary"> 
                     <FiSearch style={{height:"25px", width:"25px"}}/>
                   </button>
               
@@ -98,19 +98,21 @@ const SearchResults = (prop) => {
                 
                 <Row  style={{marginTop:"80px"}}>
                   <Col md={4} sm={4} lg={4}>
-                  <h3 style={{}}> 1. Picture  solution</h3>
+                  <div class="bg-secondary rounded p-3" style={{ width: 450, height: 700}}>
+                  <h3 style={{color :'white'}}> 1. Image  Solution</h3>
                   <div className="home-1">         
                     { msg === "uber" ? <Cards dataSource = {fields}/> :
                     msg === "dropbox" ? <Cards dataSource = {fields}/>:
                     msg === "vinmeo"? <Cards dataSource = {fields}/> : null}
                     
                   </div>
+                  </div>
 
                   </Col>
                   <Col md={2} sm={2} lg={2}></Col>
                     <Col  md={4} sm={4} lg={4}>
-                   
-                    <h3>2. video solution</h3>
+                    <div class="bg-secondary rounded p-2" style={{ width: 550, height: 480}}>
+                    <h3 style={{color :'white'}}>2. Video Solution</h3>
                     <div className='video'>
                     { msg === "uber" ? <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" /> :
                     msg === "dropbox" ? <ReactPlayer url = "https://www.youtube.com/watch?v=4Nan6Zt6bzw"/>:
@@ -119,9 +121,16 @@ const SearchResults = (prop) => {
                     
                     
                     </div>
-                    <div style={{marginTop:"100px", display: "flex", justifyContent:"space-between"}}>
-                    <h3>3. Still confused?
-                    <Button className = "Button" onClick={handleLogin}>Talk with an expert</Button>
+                    </div>
+                    <div class="bg-secondary rounded"style={{ width: 550, height: 190,marginTop:30}}>
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+                    <h3 style={{color :'white',padding:30}}>3. Still confused?
+                    <Button className = "Button1 m-4" onClick={handleLogin}>Talk with an expert</Button>
                     </h3>
                     
                 </div>

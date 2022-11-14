@@ -40,7 +40,7 @@ const SearchBar = () =>{
             
 
             <div className="SearchContainer" class="d-flex justify-content-center">
-                <Form className='home-searchbar'>
+                <Form className='form-control form-control-lg form-control-borderless'>
                         <Form.Control  style={{width:"800px"}} onChange={(e) => {handleSearchChnage(e)}} 
                             onKeyDown={(e)=>handleEnter(e)} value={search} type="text" placeholder="Search here" />           
                         
@@ -50,7 +50,7 @@ const SearchBar = () =>{
             &nbsp;
             <div className="SearchContainer" class="d-flex justify-content-center">
                 
-                    <button onClick={handlSearch} style={{height:"40px", width:"40px"}}> 
+                    <button class="btn btn-lg btn-primary" onClick={handlSearch}> 
                         <FiSearch style={{height:"25px", width:"25px"}}/>
                     </button>
            

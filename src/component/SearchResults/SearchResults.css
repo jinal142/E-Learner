@@ -18,7 +18,8 @@
     vertical-align: middle;
 }
 .video div{
-  width: 550px!important;
+  margin: 9px;
+  width: 500px!important;
   height: 400px!important;
 }
 /* .Expert-button{
@@ -35,6 +36,20 @@
   color: white;
   font-size: 0.7em;
   padding: 0.6em 1.0em;
+  border-radius: var(--border-radius);
+  margin: 1em 5px;
+  opacity: 0.85;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.Button1 {
+  border: none;
+  height : 50px;
+  width : 200px;
+  background: #111122;
+  color: white;
+  font-size: 0.7em;
   border-radius: var(--border-radius);
   margin: 1em 5px;
   opacity: 0.85;
