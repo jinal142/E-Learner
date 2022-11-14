@@ -15,10 +15,10 @@ const Header = (props) => {
         <>
           <Navbar bg="dark" variant="dark">
             <Nav class="logo" style={{ width:"50px", marginLeft:"8px"}}>
-                  <a href="#"> <img src="img/logo-no-background.png" alt="Logo"/> </a>
+                  <a href ="#"> <img src="img/logo-no-background.png" alt="Logo"/> </a>
             </Nav>                        
               <Nav>
-                <Navbar.Brand href="#home" style={{marginLeft:"60px"}}>E-Learners</Navbar.Brand>
+                <Navbar.Brand as = {Link} to ="/" style={{marginLeft:"60px"}}>E-Learners</Navbar.Brand>
               </Nav>
               <Nav className="me-auto">
                 <Nav.Link as={Link} to ="/">Home</Nav.Link>
