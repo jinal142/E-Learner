@@ -49,8 +49,8 @@ const SignUp = () => {
   return (
     <>
       <Header/>
-      <Container fluid className='PageContainer'>
-      <div className="FormContainer d-flex justify-content-center align-items-center">
+      <Container fluid className='PageContainer pt-4'>
+      <div className="FormContainer d-flex justify-content-center align-items-center ">
 
         <Form className="rounded p-4 p-sm-3" onSubmit={ formHandler }>
           <div className='LogoContainer'>
