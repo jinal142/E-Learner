@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <>
     <Header/>
-    <div>
+    <div style={{display:'flex', justifyContent:'center' }}>
     <div class="bg-info bg-gradient rounded" style={{ width: 1200, height: 600, margin:50, paddingleft:100}}>
                     <h2 style={{color :'white'}}>About us</h2>
                     <p style={{color :'black'}}>
