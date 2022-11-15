@@ -6,25 +6,24 @@ export const About = () => {
   return (
     <>
     <Header/>
-    <div style={{display:'flex', justifyContent:'center' }}>
-    <div class="bg-info bg-gradient rounded" style={{ width: 1200, height: 600, margin:50, paddingleft:100}}>
-                    <h2 style={{color :'white'}}>About us</h2>
-                    <p style={{color :'black'}}>
-                    In recent years, young people have been embracing digital technologies
-                    that enable them to be more productive, such as social media, websites, applications, and 
-                    online tutoring. Nevertheless, many elderly people are at risk of being left behind because
-                    they lack knowledge of the latest technologies. 
-                    </p>
-                    &nbsp;&nbsp;
-                    <p style={{color :'black'}}>
-                    To provide solution for the challenges they face while learning or searching
-                    for anything online and enabling them to become confident when using technology.
+    <div style={{justifyContent:'center'}}>
+      <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
+        <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>About us</h2>  
+      </div>      
+      
+      <div class=" rounded " style={{ width: 1200, height: "650px", alignItems:"center", marginLeft:"250px", marginTop:"30px", marginBottom:"70px", backgroundColor:"#276e8a", boxShadow:"1px 1px 5px rgba(0,0,0,.4)"}}>
+                    
+          
+              
+          <p style={{color :'white', fontSize:"30px", paddingLeft:"100px", paddingRight:"100px", paddingTop:"30px"}}>
+              We provide solution for the challenges that the elderly people face while learning or searching
+              for anything online and enabling them to become confident when using technology.
+          </p>
 
-                    </p>
-                    <div style={{ width: 500, height: 400, marginLeft:270,marginTop:50}}>
-                    <ReactPlayer url = "https://youtu.be/StZIgIawSIU" />
-                    </div>
-                    </div>
+          <div style={{ width: 500, height: 400, marginLeft:270,marginTop:50}}>
+             <ReactPlayer url = "https://youtu.be/StZIgIawSIU" />
+          </div>
+      </div>
     </div>
     </>
   )

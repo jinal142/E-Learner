@@ -40,7 +40,7 @@ const Header = (props) => {
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
-                    </Dropdown> : <Nav><Nav.Link as ={Link} to ="/login">Login</Nav.Link></Nav>
+                    </Dropdown> : <Nav><Nav.Link as ={Link} to ="/login" style={{marginRight:"20px", textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
                   }   
                     

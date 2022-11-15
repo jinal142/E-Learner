@@ -36,21 +36,23 @@ const SearchBar = () =>{
         }
     }
    return(
-    <Container className='home' style={{marginTop:"50px"}}>
+    <Container className='home' style={{marginTop:"30px"}}>
             
 
-            <div className="SearchContainer" class="d-flex justify-content-center">
+            <div className="SearchContainer" class="d-flex justify-content-center" >
                 <Form className='form-control form-control-lg form-control-borderless'>
-                        <Form.Control  style={{width:"800px"}} onChange={(e) => {handleSearchChnage(e)}} 
+                        <Form.Control  style={{width:"900px"}} onChange={(e) => {handleSearchChnage(e)}} 
                             onKeyDown={(e)=>handleEnter(e)} value={search} type="text" placeholder="Search here" />           
                         
                 </Form>
             </div>    
+
             &nbsp;
             &nbsp;
+
             <div className="SearchContainer" class="d-flex justify-content-center">
                 
-                    <button class="btn btn-lg btn-primary" onClick={handlSearch}> 
+                    <button class="btn btn-lg btn-primary" onClick={handlSearch} style={{boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
                         <FiSearch style={{height:"25px", width:"25px"}}/>
                     </button>
            
