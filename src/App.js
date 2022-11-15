@@ -23,8 +23,7 @@ function App() {
       <BrowserRouter>
           <div className="App" style={{backgroundColor:"azure"}}> 
 
-            <div>
-              
+            <div>              
               
                 <Routes>
                   <Route path="/" element={<Home/>} />

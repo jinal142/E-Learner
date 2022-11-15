@@ -11,100 +11,29 @@ import SolutionHome from '../../component/SolutionHome/SolutionHome';
 import { Input, Button } from 'antd'
 import Header from '../../component/Header';
 import SearchBar from '../../component/SearchBar/SearchBar';
+import NoteCard from '../../component/NoteCard/NoteCard';
 
 
 const Home = () => {
 
-    // const [search, setSearch] = useState("");
-    // //const [display, setDisplay] = useState(false);
-    // const navigate = useNavigate()
-    
-    
-    
-    // const  handlSearch = () => {
-
-    //     if(search === "uber"){
-    //         navigate("/results",{replace:true})
-            
-    //     }
-    // }
-
-    // const handleSearchChnage = (e) => {
-    //     // console.log(e.target.value);
-    //     setSearch(e.target.value);
-    //     // console.log(e.key)
-        
-        
-    // };
-
-    // const handleEnter = (e) =>{
-    
-    //     if(e.key === "Enter"){
-    //         // console.log(e.target.value)
-    //          handlSearch();
-    //     }
-    // }
-
 
   return (
-    <>
+    <div style={{minHeight:"170vh"}}>
         <Header/>
-        <div style={{backgroundColor:'azure'}}>
+        <div style={{backgroundColor:'azure', }}>
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
         <SearchBar/>
 
-        {/* <Container className='home' style={{marginTop:"50px"}}>
-            
-
-            <div className="SearchContainer" class="d-flex justify-content-center">
-                <Form className='home-searchbar'>
-                        <Form.Control  style={{width:"800px"}} onChange={(e) => {handleSearchChnage(e)}} 
-                            onKeyDown={(e)=>handleEnter(e)} value={search} type="text" placeholder="Search here" />           
-                        
-                </Form>
-            </div>    
-            &nbsp;
-            &nbsp;
-            <div className="SearchContainer" class="d-flex justify-content-center">
-                
-                    <button onClick={handlSearch} style={{height:"40px", width:"40px"}}> 
-                        <FiSearch style={{height:"25px", width:"25px"}}/>
-                    </button>
-           
-            </div>    
-
-            
-        </Container> */}
-
-        {/* <Container className='home'>
-                
-                <div className='LogoContainer'>
-                    <Input 
-                        placeholder='Search Here' 
-                        value={ search } 
-                        type ="text"
-                        onChange={(e) => {handleSearchChnage(e)}} 
-                        className="Input" />
-                </div>
-
-                <div className='ButtonContainer my-2'>
-                    <Button 
-                        variant='danger' 
-                        onClick={handlSearch}
-                        size="lg" className='ButtonHome'>
-                            Search
-                    </Button>
-                </div>
-        </Container> */}
-
+        
+        
         
     <div style={{marginTop:"70px"}}>
         
-        <h1 class="d-flex justify-content-center"> Solutions Offered </h1>
-        <br/>
-        <div className="home" class="d-flex justify-content-center"> 
+        <h1 class="d-flex justify-content-center" style={{textShadow:"1px 1px 5px rgba(0,0,0,.4)", marginTop:"85px"}}> Offered Solutions </h1>
+        
+        <div className="home" class="d-flex justify-content-center" style={{border:"2px solid gray", borderRadius:"25px", width:"1350px", marginLeft:"170px", marginBottom:"50px", height:"170px", paddingLeft:"-10px", alignItems:"center", paddingRight:"50px", paddingBottom:"50px", boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
     
             <SolutionHome source = "img/uber.jpeg" />
             <SolutionHome source = "img/airbnb.png" />
@@ -114,25 +43,26 @@ const Home = () => {
             
         </div>
     
-    </div>
-        <div style={{marginTop:"70px"}}>
-        
-            <h1 class="d-flex justify-content-center"> How do we Work </h1>
-            <br/>
-            <div className="home" class="d-flex justify-content-center"> 
-        
-                <CardHome style={{marginLeft:"50px"}} text = " We provide solution in Text & Image format in Flash Cards." title = "Step 1"/>&nbsp;&nbsp;
-                <CardHome style={{marginLeft:"1000px"}} text = "We provide solution in Video format." title = "Step 2"/>&nbsp;&nbsp;
-                <CardHome text = "We provide solution directly from an expert with talk with expert."  title = "Step 3"/>
-        
-            </div>
-        
+        <NoteCard />
+
+
         </div>
+            <div style={{marginTop:"80px"}}>
+            
+                <h1 class="d-flex justify-content-center" style={{textShadow:"1px 1px 5px rgba(0,0,0,.4)"}}> How do we Work </h1>
+                
+                <div className="home" class="d-flex justify-content-center" style={{border:"2px solid gray", borderRadius:"25px", width:"1250px", marginLeft:"220px", marginBottom:"50px", height:"230px", paddingLeft:"-10px", alignItems:"center", paddingRight:"50px", paddingBottom:"10px", boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
+            
+                    <CardHome style={{marginLeft:"50px"}} text = " We provide solution in Text & Image format in Flash Cards." title = "Solution 1"/>&nbsp;&nbsp;
+                    <CardHome style={{marginLeft:"1000px"}} text = "We provide solution in Video format." title = "Solution 2"/>&nbsp;&nbsp;
+                    <CardHome text = "We provide solution directly from an expert with talk with expert."  title = "Solution 3"/>
+            
+                </div>
+            
+            </div>        
 
-        
-
+        </div>
     </div>
-    </>
     
     
   )
