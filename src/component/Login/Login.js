@@ -18,7 +18,7 @@ const Login = () => {
   };
 
   const onLogoClick = () => {
-    navigate("/bookappoitment", { replace: true })
+    navigate("/", { replace: true })
   }
 
   const goToSignUp = () => {
@@ -63,7 +63,7 @@ const Login = () => {
           </Form.Group>
 
           
-          <Button style={{backgroundColor:"#15BAEB",width:"100px", height:"40px",fontSize:"20px" }} type="submit" onClick= {()=> navigate('/bookappoitment',{replace : true})}>
+          <Button style={{backgroundColor:"#15BAEB",width:"100px", height:"40px",fontSize:"20px" }} type="submit" onClick= {()=> navigate('/bookAppointment',{replace : true})}>
             Login
           </Button>
 

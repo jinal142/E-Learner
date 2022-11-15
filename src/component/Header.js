@@ -15,7 +15,7 @@ const Header = (props) => {
         <>
           <Navbar bg="dark" variant="dark">
             <Nav class="logo" style={{ width:"50px", marginLeft:"8px"}}>
-                  <a href ="#"> <img src="img/logo-no-background.png" alt="Logo"/> </a>
+                  <a href ="/"> <img src="img/logo-no-background.png" alt="Logo"/> </a>
             </Nav>                        
               <Nav>
                 <Navbar.Brand as = {Link} to ="/" style={{marginLeft:"60px"}}>E-Learners</Navbar.Brand>
@@ -24,11 +24,9 @@ const Header = (props) => {
                 <Nav.Link as={Link} to ="/">Home</Nav.Link>
                 <Nav.Link as={Link} to ="/about">About Us</Nav.Link>
               </Nav>
-            {/* <div>              
-                <FaUserCircle  style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/>
-            </div>   */}
+            
             <div> 
-                  {props.path === '/bookappoitment'?
+                  {props.path === '/bookAppointment'?
                   <Dropdown>  
                         <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>

@@ -42,7 +42,7 @@ const ListExperts = () =>{
         <>
             {console.log(useLocation())}
             <Header path = {useLocation().pathname}/>
-            <div>
+            <div style={{minHeight:"190vh"}}>
             {
                 exp.map( t =>
                     <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call}/> 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CardStyle.css";
 
-import Card from "./Card";
+import FlashCard from "./FlashCard";
 
 
 export default function Cards(props) {
@@ -13,7 +13,7 @@ export default function Cards(props) {
   });
 
   const cards = flashcarddata.map((card) => {
-    return <Card card={card} key={card.id} />;
+    return <FlashCard card={card} key={card.id} />;
   });
 
   const loading = <div className="loading">Loading flashcard content...</div>;

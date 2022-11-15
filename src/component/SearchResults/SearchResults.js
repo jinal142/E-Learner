@@ -18,7 +18,7 @@ const uberFields = [
       side1: [
         "Step-1",
        "This is the Home Page when you Open the Uber Application." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
 
       
@@ -31,7 +31,7 @@ const uberFields = [
       [
         "Step-2",
        "Tap on the search bar and enter the address. And select the appropriate destination.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/2.jpeg",
     }
@@ -43,7 +43,7 @@ const uberFields = [
     [
       "Step-3",
      "After select the appropriate car based on number of people travelling, fare and time it will take for the cab to reach." ,
-     " Click Me to see the picture",
+     " Click Me to see the picture!",
     ],
     side2:"./img/3.jpeg",
   }
@@ -55,7 +55,7 @@ const uberFields = [
     [
       "Step-4",
      "Select the pick-up point of the location where the cab should arrive. And after confirming pickup the cab will arrive at the pick-up location." ,
-     " Click Me to see the picture",
+     " Click Me to see the picture!",
     ],
       side2:"./img/4.jpeg",
   }
@@ -70,7 +70,7 @@ const doordashFields = [
       [
         "Step-1",
        "This is the Home Page when you Open the Doordash Application where you can directly look for restaurants to food delivery at near by locations. ",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/d1.png",
     }
@@ -82,7 +82,7 @@ const doordashFields = [
       [
         "Step-2",
        " You can tap on the search button and search for the type of cuisine, desserts, food items.etc Offered by different restaurants and stores." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/d2.png",
     }
@@ -94,7 +94,7 @@ const doordashFields = [
       [
         "Step-3",
        "After selecting your desired choice you can see the restaurants that offer your choice and then based on the ratings and distance and price you can select the restaurant, store,etc. " ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/d3.png",
   }
@@ -106,7 +106,7 @@ const doordashFields = [
       [
         "Step-4",
        "After selecting the restaraunt there is an option for pick up or delivery choose accordingly." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/d4.png",
   },
@@ -116,7 +116,7 @@ const doordashFields = [
       [
         "Step-5",
        "from the various options select the food items of you choice and tap on the “+“ button." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/d5.png",
   },
@@ -126,7 +126,7 @@ const doordashFields = [
       [
         "Step-6",
        "After selecting the food items of you order tap on view cart." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/d6.png",
   },
@@ -136,7 +136,7 @@ const doordashFields = [
       [
         "Step-7",
        "It will show the items and its quantity and after verify it and th order total tap on continue." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/d7.png",
   },
@@ -146,7 +146,7 @@ const doordashFields = [
       [
         "Step-8",
        "Enter your delivery address and the payment method and your conatct number and then tap on next and complete you order and then food will be delivered to your house.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/d8.png",
   }
@@ -161,7 +161,7 @@ const airbnbFields = [
       [
         "Step-1",
        "This is the Home Page when you Open the Airbnb Application where you can directly look for properties to stay at near by destinations.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/a1.png",
     }
@@ -173,7 +173,7 @@ const airbnbFields = [
       [
         "Step-2",
        " Here you can select the location, dates and number of people staying in the property. " ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/a2.png",
     }
@@ -185,7 +185,7 @@ const airbnbFields = [
       [
         "Step-3",
        "After entering desired details and tap on the search button.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/a3.png",
   }
@@ -197,7 +197,7 @@ const airbnbFields = [
       [
         "Step-4",
        "You will be given various different properties and price ranges. Select the desired property." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/a4.png",
   },
@@ -207,7 +207,7 @@ const airbnbFields = [
       [
         "Step-5",
        "After selecting the property you can know more about it like its images, near by places, number of rooms, amenities with the property,etc. " ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/a5.png",
   },
@@ -217,7 +217,7 @@ const airbnbFields = [
       [
         "Step-6",
        "After tapping the reserve button you can see the charges og the property. Verify the details that you have entered are correct." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/a6.png",
   },
@@ -227,7 +227,7 @@ const airbnbFields = [
       [
         "Step-7",
        "After that tap on request to book and pay the required amount and you have booked your Airbnb property" ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/a7.png",
   }
@@ -242,7 +242,7 @@ const venmoFields = [
       [
         "Step-1",
        "This is the Home Page when you Open the Venmo Application.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/v1.png",
     }
@@ -254,7 +254,7 @@ const venmoFields = [
       [
         "Step-2",
        " Search the Person/Business though their Venmo ID or Scan through QR code." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/v2.png",
     }
@@ -266,7 +266,7 @@ const venmoFields = [
       [
         "Step-3",
        "Select on the Person/Business." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/v3.png",
   }
@@ -278,7 +278,7 @@ const venmoFields = [
       [
         "Step-4",
        "Enter the Amount of Money that you want to pay or Request Money. Also Enter a Note for what purpose are are paying money or requesting it." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/v4.png",
   }
@@ -293,7 +293,7 @@ const walmartFields = [
       [
         "Step-1",
        "This is the Home Page when you Open the Walmart Application where you can directly look for items that you need.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/w1.png",
     }
@@ -305,7 +305,7 @@ const walmartFields = [
       [
         "Step-2",
        " You can tap on the search button and also search the item you want.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/w2.png",
     }
@@ -317,7 +317,7 @@ const walmartFields = [
       [
         "Step-3",
        "After entering the item you want in search bar you will be presented with different items and also related items based on your search.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
       side2:"./img/w3.png",
   }
@@ -329,7 +329,7 @@ const walmartFields = [
       [
         "Step-4",
        "After that add the items to the cart by tapping on the “+” button." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/w4.png",
   },
@@ -339,7 +339,7 @@ const walmartFields = [
       [
         "Step-5",
        "Press on the Cart icon to see the items in your cart and after verifying the items you can tap on checkout all items." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/w5.png",
   },
@@ -349,7 +349,7 @@ const walmartFields = [
       [
         "Step-6",
        "Select the way of receiving the items by pick-up or delivery." ,
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/w6.png",
   },
@@ -359,7 +359,7 @@ const walmartFields = [
       [
         "Step-7",
         "After that you can pay for the order and then the order will be placed.",
-       " Click Me to see the picture",
+       " Click Me to see the picture!",
       ],
     side2:"./img/w7.png",
   }
@@ -370,20 +370,29 @@ const SearchResults = (prop) => {
 
   const {state} = useLocation();
   console.log(state);
-
+  const [search, setSearch] = useState("");
   const [msg, setMsg] = useState(state.search);
   const handleChange = (e)=>{
-    // console.log(e.target.value)
-    setMsg(e.target.value)
-  
-
+    
+    setMsg(e.target.value);
   }
 
+  const  handlSearch = () => {
+    console.log("in search");
+    navigate("/results",{ state : {search: msg} },{replace:true})
+    
 
+}
+  const handleEnter = (e) =>{
+    console.log(e);
+    if(e.key === "Enter"){
+        e.preventDefault();
+         handlSearch();
+    }
+  }
   const navigate = useNavigate()
 
   const handleLogin =()=>{
-    //console.log("Hello Login");
     navigate("/login",{replace:true})
   }
     
@@ -396,7 +405,7 @@ const SearchResults = (prop) => {
                 <div className="SearchContainer" class="d-flex justify-content-center">
                   <Form className='form-control form-control-lg form-control-borderless'>
                     
-                      <Form.Control  style={{width:"800px"}} value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
+                      <Form.Control  style={{width:"800px"}} onKeyDown={(e)=>handleEnter(e)}  value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
                             
                   </Form>
                 </div>   
@@ -406,7 +415,7 @@ const SearchResults = (prop) => {
                 {console.log(msg)}
                 <div className="SearchContainer" class="d-flex justify-content-center">
                     
-                  <button class="btn btn-lg btn-primary"> 
+                  <button class="btn btn-lg btn-primary" onClick={handlSearch}> 
                     <FiSearch style={{height:"25px", width:"25px"}}/>
                   </button>
               
@@ -415,7 +424,7 @@ const SearchResults = (prop) => {
             </Container>
 
 
-            <Container  style = {{marginTop:"20px"}}>
+            <Container  style = {{marginTop:"20px", minHeight:"100vh"}}>
                 
                 <Row  style={{marginTop:"80px"}}>
                   <Col md={4} sm={4} lg={4}>
