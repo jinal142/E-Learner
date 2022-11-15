@@ -26,22 +26,26 @@ const Expert = (props) =>{
     const bookSuccsfull = ()=>{
         if (time === true && isTimePicked === true){
             alert("Appointment has been booked ");
+            setShow(false);
             
         }
         else if(time === true && isTimePicked === false){
             alert("Please select the time");
+            setShow(false);
 
         }
 
         else if (time === false && isTimePicked === true){
           
             alert("Please select valid appointment data ! ");
+            setShow(false);
         }
         else{
             alert("Please select valid appointment data and Time ! ");
+            setShow(false);
         }
         
-        // setShow(false);
+         
     }
     const handleTime = () => {
         console.log("Clicked")
