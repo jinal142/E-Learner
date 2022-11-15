@@ -11,6 +11,7 @@ export default function Time(props) {
             id="custom-switch"
             name="radiob"
             label={t}
+            onClick = {props.method}
       />
       ))
       }

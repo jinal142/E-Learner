@@ -15,6 +15,7 @@ const Expert = (props) =>{
     const [show, setShow] = useState(false);
     const [value, onChange] = useState();
     const [time, setDisplay] = useState(false);
+    const [isTimePicked, setIsTimePicked] = useState(false);
 
     const handleClose = () => {
         setShow(false);
@@ -23,16 +24,28 @@ const Expert = (props) =>{
     }
     const handleShow = () => setShow(true);
     const bookSuccsfull = ()=>{
-        if (time === true){
+        if (time === true && isTimePicked === true){
             alert("Appointment has been booked ");
+            
+        }
+        else if(time === true && isTimePicked === false){
+            alert("Please select the time");
+
         }
 
-        else{
+        else if (time === false && isTimePicked === true){
           
-            alert("Please select valid appointment data and time! ");
+            alert("Please select valid appointment data ! ");
+        }
+        else{
+            alert("Please select valid appointment data and Time ! ");
         }
         
-        setShow(false);
+        // setShow(false);
+    }
+    const handleTime = () => {
+        console.log("Clicked")
+        setIsTimePicked(true)
     }
 
     
@@ -63,7 +76,7 @@ const Expert = (props) =>{
                             
                             <DatePicker onChange={onChange} value={value} onClick = {() => setDisplay(true)} />
                             
-                            {   time ?  <Time time ={props.time_array}/>  : null  }         
+                            {   time ?  <Time time ={props.time_array} method = {handleTime}/>  : null  }         
                            
 
                         </div>
@@ -72,13 +85,21 @@ const Expert = (props) =>{
                         <Button variant="secondary" onClick={handleClose}>
                         Close
                         </Button>
-                        {time ? <Button variant="primary" onClick={bookSuccsfull}>
+                        {/* {time ? isTimePicked ? <Button variant="primary" onClick={bookSuccsfull}>
                             Book
                             </Button> : <Button variant="primary" onClick={()=>{
-                                alert("please select the date first")
+                                alert("please select time first")
                             }}>
                             Book
-                            </Button>}
+                            </Button> :<Button variant="primary" onClick={()=>{
+                                alert("please select the date and time first")
+                            }}>
+                            Book
+                            </Button> } */}
+                        <Button variant="primary" onClick={bookSuccsfull}>
+                            Book
+                        </Button>
+                        
                         
                     </Modal.Footer>
 
