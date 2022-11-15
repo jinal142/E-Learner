@@ -72,9 +72,14 @@ const Expert = (props) =>{
                         <Button variant="secondary" onClick={handleClose}>
                         Close
                         </Button>
-                        <Button variant="primary" onClick={bookSuccsfull}>
+                        {time ? <Button variant="primary" onClick={bookSuccsfull}>
                             Book
-                            </Button>
+                            </Button> : <Button variant="primary" onClick={()=>{
+                                alert("please select the date first")
+                            }}>
+                            Book
+                            </Button>}
+                        
                     </Modal.Footer>
 
                     </Modal>
