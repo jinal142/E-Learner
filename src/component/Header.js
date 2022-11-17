@@ -27,14 +27,14 @@ const Header = (props) => {
               </Nav>
             
             <div> 
-                  {props.path === '/bookAppointment' || props.path === '/history'?
+                  {props.path === '/bookAppointment' || props.path === '/history' || props.path === '/myappointments'?
                   <Dropdown>  
                         <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>
                         </Dropdown.Toggle>  
     
                         <Dropdown.Menu>  
-                            <Dropdown.Item href="#/action-1"><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
+                            <Dropdown.Item as={Link} to ="/myappointments"><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
                             <Dropdown.Item as={Link} to ="/history" ><AiOutlineHistory/>My History</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  

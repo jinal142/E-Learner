@@ -13,7 +13,7 @@ import Login from './component/Login/Login';
 import SignUp from './component/Login/SignUp';
 import ListExperts from './component/ListExperts/ListExperts';
 import History from './component/History/History';
-
+import MyAppointments from './component/MyAppointments/MyAppointments';
 
 
 
@@ -31,6 +31,7 @@ function App() {
                   <Route path="/login" element={ <Login />} />
                   <Route path = '/bookAppointment' element = {<ListExperts/>}/>
                   <Route path ="/history" element = {<History/>}/>
+                  <Route path ="/myappointments" element = {<MyAppointments/>}/>
                   <Route path="/signup" element={ <SignUp />} />
                   
                   <Route path="/about" element={<About/>} />
