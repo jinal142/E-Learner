@@ -20,7 +20,10 @@ for(let i =1; i<4; i++){
     <div style={{justifyContent:'center'}}>
       <div  style={{alignItems:"center"}}>
         <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>My Next Appointment</h2>  
-        <h4 style={{marginTop : '50px'}}> Your appoitment has been booked succssesfully at this time {state[0].Time} and on  {final}.</h4>
+        { state[0].Time ? <h4 style={{marginTop : '50px'}}> Your appoitment has been booked succssesfully at this time {state[0].Time} and on  {final}.</h4> :
+        <h4 style={{marginTop : '50px'}}>You have not selected the Date and Time, Please go back and select</h4>
+        }
+
         
       </div> 
 
