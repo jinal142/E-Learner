@@ -27,7 +27,7 @@ const Header = (props) => {
               </Nav>
             
             <div> 
-                  {props.path === '/bookAppointment'?
+                  {props.path === '/bookAppointment' || props.path === '/history'?
                   <Dropdown>  
                         <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>

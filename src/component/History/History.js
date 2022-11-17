@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../Header'
 import Table from 'react-bootstrap/Table';
+import { useLocation } from 'react-router';
 
 const History =() => {
   return (
     <>
-    <Header/>
+    <Header path = {useLocation().pathname}/>
     <div style={{justifyContent:'center'}}>
       <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
         <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>History</h2>  
