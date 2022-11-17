@@ -22,7 +22,7 @@ const SignUp = () => {
   }
 
     const handleSubmit = () => {
-        navigate("/bookappoitment", { replace: true })
+        navigate("/bookAppointment", { replace: true })
   }
 
   const formHandler = (event) => {
