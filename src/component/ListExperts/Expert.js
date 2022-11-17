@@ -47,9 +47,13 @@ const Expert = (props) =>{
         
          
     }
-    const handleTime = () => {
-        console.log("Clicked")
+    const handleTime = (e) => {
+        props.setStime(e.target.value)
         setIsTimePicked(true)
+    }
+
+    const handleChange = (e)=>{
+        props.setSdate(String(e))
     }
 
     
@@ -78,7 +82,7 @@ const Expert = (props) =>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={onChange} value={value} onClick = {() => setDisplay(true)} />
+                            <DatePicker onChange={handleChange} value={value} onClick = {() => setDisplay(true)} />
                             
                             {   time ?  <Time time ={props.time_array} method = {handleTime}/>  : null  }         
                            

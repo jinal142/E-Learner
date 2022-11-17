@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Navbar, Nav, Container} from 'react-bootstrap'; 
 import "./Style.css";
 import { FaUserCircle } from "react-icons/fa";
@@ -11,6 +11,11 @@ import {MdLogout} from 'react-icons/md';
 
 
 const Header = (props) => {
+  const navigation = useNavigate()
+
+  const handleChange = ()=>{
+    navigation("/myappointments" , {state: [ {Time : props.T},{date : props.D}]})
+  }
   return (
     <div>
         <>
@@ -34,7 +39,7 @@ const Header = (props) => {
                         </Dropdown.Toggle>  
     
                         <Dropdown.Menu>  
-                            <Dropdown.Item as={Link} to ="/myappointments"><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
+                            <Dropdown.Item  onClick={handleChange}><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
                             <Dropdown.Item as={Link} to ="/history" ><AiOutlineHistory/>My History</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  

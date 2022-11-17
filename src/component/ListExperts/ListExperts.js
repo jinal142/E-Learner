@@ -1,8 +1,25 @@
 import Header from '../Header.js'
 import Expert from "./Expert";
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 const ListExperts = () =>{
+
+    const[stime, setStime] = useState('')
+    const[sdate, setSdate] = useState('');
+    const[ sname, setName] = useState('');
+
+    const handlechange1 = (t) =>{
+        setStime(t);
+    }
+    
+    const handlechange2 = (t) =>{
+    setSdate(t);
+    }
+    // const handlechange3 = (t) =>{
+    // setName(t);
+    // }
+
 
     const exp = [
         {
@@ -41,11 +58,11 @@ const ListExperts = () =>{
     return (
         <>
             {console.log(useLocation())}
-            <Header path = {useLocation().pathname}/>
+            <Header path = {useLocation().pathname}  T = {stime}  D = {sdate}/>
             <div style={{minHeight:"190vh"}}>
             {
                 exp.map( t =>
-                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call}/> 
+                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call} setStime = {handlechange1} setSdate = {handlechange2} /> 
                 )
             }
                 
