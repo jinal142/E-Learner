@@ -22,7 +22,7 @@ for(let i =1; i<4; i++){
         <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>My Next Appointment</h2>  
         { state[0].Time ? <div>
           <h4 style={{marginTop : '50px'}}> Your appoitment has been booked succssesfully at this time {state[0].Time} and on  {final}.</h4>
-        <h4> please connect with the expert using call Button </h4> 
+        <h4> Please connect with the expert using Call button </h4> 
         <button class="btn btn-success"><a href='https://meet.google.com/rsg-weac-fii?pli=1' target="_blank" class = 'a' style={{fontSize:"25px"}}>Call</a></button>
         </div> :
         <h4 style={{marginTop : '50px'}}>You have not selected the Date and Time, Please go back and select</h4>
