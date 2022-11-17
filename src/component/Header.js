@@ -9,6 +9,7 @@ import {FaRegCalendarTimes} from 'react-icons/fa';
 import { Dropdown} from 'react-bootstrap';
 import {MdLogout} from 'react-icons/md';
 
+
 const Header = (props) => {
   return (
     <div>
@@ -34,7 +35,7 @@ const Header = (props) => {
     
                         <Dropdown.Menu>  
                             <Dropdown.Item href="#/action-1"><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2"><AiOutlineHistory/>My History</Dropdown.Item>  
+                            <Dropdown.Item as={Link} to ="/history" ><AiOutlineHistory/>My History</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  

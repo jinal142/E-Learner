@@ -12,6 +12,7 @@ import SearchResults from './component/SearchResults/SearchResults';
 import Login from './component/Login/Login';
 import SignUp from './component/Login/SignUp';
 import ListExperts from './component/ListExperts/ListExperts';
+import History from './component/History/History';
 
 
 
@@ -29,7 +30,7 @@ function App() {
                   <Route path='/results' element={<SearchResults />}/>
                   <Route path="/login" element={ <Login />} />
                   <Route path = '/bookAppointment' element = {<ListExperts/>}/>
-                  
+                  <Route path ="/history" element = {<History/>}/>
                   <Route path="/signup" element={ <SignUp />} />
                   
                   <Route path="/about" element={<About/>} />
