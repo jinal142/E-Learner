@@ -10,6 +10,7 @@ import Cards from '../FlashCards/Cards';
 import Header from '../Header';
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
+import { message } from 'antd';
 
 
 const uberFields = [
@@ -309,8 +310,8 @@ const walmartFields = [
       ],
       side2:"./img/w2.png",
     }
-},
-{
+  },
+  {
   fields: {
       
     side1: 
@@ -320,9 +321,9 @@ const walmartFields = [
        " Click Me to see the picture!",
       ],
       side2:"./img/w3.png",
-  }
-},
-{
+    }
+  },
+  {
   fields: {
       
     side1: 
@@ -332,7 +333,9 @@ const walmartFields = [
        " Click Me to see the picture!",
       ],
     side2:"./img/w4.png",
+    },
   },
+  {
   fields: {
       
     side1: 
@@ -342,7 +345,9 @@ const walmartFields = [
        " Click Me to see the picture!",
       ],
     side2:"./img/w5.png",
+    },
   },
+  {
   fields: {
       
     side1: 
@@ -352,7 +357,9 @@ const walmartFields = [
        " Click Me to see the picture!",
       ],
     side2:"./img/w6.png",
+    },
   },
+  { 
   fields: {
       
     side1: 
@@ -395,6 +402,16 @@ const SearchResults = (prop) => {
   const handleLogin =()=>{
     navigate("/login",{replace:true})
   }
+
+  const handlalert =()=>{
+    alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
+  }
+
+  const errorsearch = () => {
+    navigate("/", { replace: true })
+    handlalert()
+    
+  }
     
     return(
         <>
@@ -431,11 +448,13 @@ const SearchResults = (prop) => {
                   <div class="bg-secondary rounded p-3" style={{ width: 450, height: 700}}>
                   <h3 style={{color :'white'}}> 1. Image  Solution</h3>
                   <div className="home-1">         
-                    { msg === "uber" ? <Cards dataSource = {uberFields}/> :
-                    msg === "venmo"? <Cards dataSource = {venmoFields}/> :
-                    msg === "airbnb"? <Cards dataSource = {airbnbFields}/> :
-                    msg === "doordash"? <Cards dataSource = {doordashFields}/> :
-                    msg === "walmart"? <Cards dataSource = {walmartFields}/> : null}
+                    { msg.toUpperCase() === "UBER" ? <Cards dataSource = {uberFields}/> :
+                    msg.toUpperCase() === "VENMO"? <Cards dataSource = {venmoFields}/> :
+                    msg.toUpperCase() === "AIRBNB"? <Cards dataSource = {airbnbFields}/> :
+                    msg.toUpperCase() === "DOORDASH"? <Cards dataSource = {doordashFields}/> :
+                    msg.toUpperCase() === "WALMART"? <Cards dataSource = {walmartFields}/> :
+                    msg.toUpperCase() !== "UBER" || "VENMO" || "AIRBNB" || "DOORDASH" || "WALMART"? errorsearch():null
+                    }
                     
                   </div>
                   </div>
@@ -446,11 +465,13 @@ const SearchResults = (prop) => {
                     <div class="bg-secondary rounded p-2" style={{ width: 550, height: 480}}>
                     <h3 style={{color :'white'}}>2. Video Solution</h3>
                     <div className='video'>
-                    { msg === "uber" ? <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" /> :
-                    msg === "venmo"? <ReactPlayer url =" https://www.youtube.com/watch?v=O61hMHYWqc8"/> : 
-                    msg === "airbnb"? <ReactPlayer url ="https://www.youtube.com/watch?v=gOqRiXDGNCc"/>:
-                    msg === "doordash"? <ReactPlayer url =" https://www.youtube.com/watch?v=F3uRbXg46vM"/>:
-                    msg === "walmart"? <ReactPlayer url =" https://www.youtube.com/watch?v=-QWyPzTa6wI"/>:null}
+                    { msg.toUpperCase() === "UBER" ? <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" /> :
+                    msg.toUpperCase() === "VENMO"? <ReactPlayer url =" https://www.youtube.com/watch?v=O61hMHYWqc8"/> : 
+                    msg.toUpperCase() === "AIRBNB"? <ReactPlayer url ="https://www.youtube.com/watch?v=gOqRiXDGNCc"/>:
+                    msg.toUpperCase() === "DOORDASH"? <ReactPlayer url =" https://www.youtube.com/watch?v=F3uRbXg46vM"/>:
+                    msg.toUpperCase() === "WALMART"? <ReactPlayer url =" https://www.youtube.com/watch?v=-QWyPzTa6wI"/>:null
+                    //msg.toUpperCase() !== "UBER" || "VENMO" || "AIRBNB" || "DOORDASH" || "WALMART"? errorsearch():null
+                    }
                     
                     
                     
