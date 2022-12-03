@@ -16,9 +16,9 @@ const ListExperts = () =>{
     const handlechange2 = (t) =>{
     setSdate(t);
     }
-    // const handlechange3 = (t) =>{
-    // setName(t);
-    // }
+    const handlechange3 = (t) =>{
+    setName(t);
+    }
 
 
     const exp = [
@@ -58,11 +58,11 @@ const ListExperts = () =>{
     return (
         <>
             {console.log(useLocation())}
-            <Header path = {useLocation().pathname}  T = {stime}  D = {sdate}/>
+            <Header path = {useLocation().pathname}  T = {stime}  D = {sdate} N ={sname}/>
             <div style={{minHeight:"190vh"}}>
             {
                 exp.map( t =>
-                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call} setStime = {handlechange1} setSdate = {handlechange2} /> 
+                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call} setStime = {handlechange1} setSdate = {handlechange2} setName={handlechange3} /> 
                 )
             }
                 
