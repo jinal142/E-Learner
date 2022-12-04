@@ -16,6 +16,8 @@ const Expert = (props) =>{
     const [value, setValue] = useState(new Date());
     const [time, setDisplay] = useState(false);
     const [isTimePicked, setIsTimePicked] = useState(false);
+
+    
    
 
     const handleClose = () => {
@@ -30,37 +32,39 @@ const Expert = (props) =>{
     const bookSuccsfull = ()=>{
         if (time === true && isTimePicked === true){
             alert("Appointment has been booked ");
+            setDisplay(false);
+            setIsTimePicked(false);
             setShow(false);
             
         }
         else if(time === true && isTimePicked === false){
             alert("Please select the time");
-            setShow(false);
+            // setShow(false);
 
         }
 
         else if (time === false && isTimePicked === true){
           
             alert("Please select valid appointment data ! ");
-            setShow(false);
+            // setShow(false);
         }
         else{
             alert("Please select valid appointment data and Time ! ");
-            setShow(false);
+            // setShow(false);
         }
         
          
     }
     const handleTime = (e) => {
         props.setStime(e.target.value)
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setIsTimePicked(true)
     }
 
     const handleChange = (e)=>{
-        setDisplay(true)
-        props.setSdate(String(e.target.ariaLabel))
-         console.log(e.target.ariaLabel)
+        setDisplay(true);
+        // console.log(typeof(e));
+        props.setSdate(String(e));
     }
 
     
@@ -89,7 +93,7 @@ const Expert = (props) =>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={setValue} value={value} onClick = {handleChange} />
+                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} />
                            
                             
                           

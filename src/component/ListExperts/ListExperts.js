@@ -8,16 +8,21 @@ const ListExperts = () =>{
     const[stime, setStime] = useState('')
     const[sdate, setSdate] = useState('');
     const[ sname, setName] = useState('');
+    
 
     const handlechange1 = (t) =>{
         setStime(t);
+        // console.log('time change called: ' + t);
     }
     
     const handlechange2 = (t) =>{
     setSdate(t);
+    // console.log('date change called: ' + t);
+
     }
     const handlechange3 = (t) =>{
     setName(t);
+    // console.log('name change called: ' + t);
     }
 
 
@@ -55,9 +60,10 @@ const ListExperts = () =>{
 
         }
     ]
+    console.log({ stime, sdate, sname });
     return (
         <>
-            {console.log(useLocation())}
+            {/* {console.log(useLocation())} */}
             <Header path = {useLocation().pathname}  T = {stime}  D = {sdate} N ={sname}/>
             <div style={{minHeight:"190vh"}}>
             {
