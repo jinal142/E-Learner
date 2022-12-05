@@ -12,7 +12,7 @@ const MyAppointments =(props) => {
   // const {state} = useLocation();
   const [show, setShow] = useState(false);
 
-  console.log(props.id);
+
   
  
   // console.log(state);
