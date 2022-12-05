@@ -5,19 +5,16 @@ import Time from '../ListExperts/Time';
 import Button from 'react-bootstrap/Button';
 
 const Edit = (props)=>{
+    // const{id, card, setCard} = props
     const [show, setShow] = useState(true);
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState();
 
     console.log(props)
+    // console.log(card.filter((ele)=> ele.id === id)[0].date)
     // const [time, setDisplay] = useState(false);
     // const [isTimePicked, setIsTimePicked] = useState(false);
 
-    const handleClose = () => {
-        setShow(false);
-        // setDisplay(false)
-        props.vis();
-    
-    }
+   
     
  
     // const handleTime = (e) => {
@@ -37,7 +34,7 @@ const Edit = (props)=>{
 
     return(
         <>
-            <Modal show ={show} onHide= {handleClose}>
+            <Modal show ={show} onHide= {props.close}>
                     <Modal.Header closeButton>
                         <Modal.Title>Schdule Appointments</Modal.Title>
                     </Modal.Header>
@@ -51,7 +48,7 @@ const Edit = (props)=>{
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="secondary" onClick={props.close}>
                         Close
                         </Button>
                            

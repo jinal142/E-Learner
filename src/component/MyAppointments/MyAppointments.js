@@ -12,6 +12,9 @@ const MyAppointments =(props) => {
   // const {state} = useLocation();
   const [show, setShow] = useState(false);
 
+  const[modalAppoitment, setModalAppoitment] = useState({});
+
+
 
   
  
@@ -26,8 +29,9 @@ const MyAppointments =(props) => {
     return str;
   }
  
-const handleShow = () => {
+const handleShow = (t) => {
     setShow(true);
+    setModalAppoitment(t);
     // props.setName(props.name)
 }
 const handleClose = () =>{
@@ -52,19 +56,21 @@ const handleClose = () =>{
           {
             props.card.map(t => (
               <>
-              <tr>
+              <tr key = {t.id}>
                 <td>{t.name}</td>
                 <td>{final(String(t.date))}</td>
                 <td>{t.time}</td>
                 
-                <td><Button onClick={handleShow}>Edit</Button></td>
-                {show ? <Edit id = {t.id} card = {props.card}  setCard = {props.setCard} vis ={handleClose}/> : null}
+                <td><Button onClick={() =>{handleShow(t)}}>Edit</Button></td>
+                
               </tr>
              
               </>
               
             ))
+            
           }
+          {show ? <Edit modalAppoitment  = {modalAppoitment} card ={props.card} setcard = {props.setCard} close = {handleClose}/> : null}
         </tbody>
 
        </Table>
