@@ -17,8 +17,12 @@ const Expert = (props) =>{
     const [time, setDisplay] = useState(false);
     const [isTimePicked, setIsTimePicked] = useState(false);
 
+    const[stime, setStime] = useState('');
+    const[sdate, setSdate] = useState('');
+    // const[ sname, setName] = useState('');
+
     
-   
+   ;
 
     const handleClose = () => {
         setShow(false);
@@ -27,11 +31,22 @@ const Expert = (props) =>{
     }
     const handleShow = () => {
         setShow(true);
-        props.setName(props.name)
+        // props.setName(props.name)
     }
     const bookSuccsfull = ()=>{
         if (time === true && isTimePicked === true){
             alert("Appointment has been booked ");
+
+            if(sdate !== '' && stime !== ''){
+                props.setCard([{
+                    id: props.id,
+                    name:props.name,
+                    date:sdate,
+                    time:stime
+                    
+                }, ...props.card])
+            }
+          
             setDisplay(false);
             setIsTimePicked(false);
             setShow(false);
@@ -56,7 +71,7 @@ const Expert = (props) =>{
          
     }
     const handleTime = (e) => {
-        props.setStime(e.target.value)
+        setStime(e.target.value)
         // console.log(e.target.value)
         setIsTimePicked(true)
     }
@@ -64,7 +79,7 @@ const Expert = (props) =>{
     const handleChange = (e)=>{
         setDisplay(true);
         // console.log(typeof(e));
-        props.setSdate(String(e));
+        setSdate(String(e));
     }
 
     
@@ -93,11 +108,7 @@ const Expert = (props) =>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} />
-                           
-                            
-                          
-                            
+                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} minDate ={value}/>
                             {   time ?  <Time time ={props.time_array} method = {handleTime}/>  : null  }         
                            
 

@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div style={{minHeight:"170vh"}}>
-        <Header/>
+        {/* <Header/> */}
         <div style={{backgroundColor:'azure', }}>
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>

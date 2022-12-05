@@ -48,7 +48,7 @@ const SignUp = () => {
 
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
       <Container fluid className='PageContainer pt-4'>
       <div className="FormContainer d-flex justify-content-center align-items-center ">
 

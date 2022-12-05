@@ -415,7 +415,7 @@ const SearchResults = (prop) => {
     
     return(
         <>
-            <Header/>
+            {/* <Header/> */}
             
             <Container className='home' style={{marginTop:"50px"}}>            
 

@@ -2,32 +2,35 @@ import Header from '../Header.js'
 import Expert from "./Expert";
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
-const ListExperts = () =>{
-
-    const[stime, setStime] = useState('')
-    const[sdate, setSdate] = useState('');
-    const[ sname, setName] = useState('');
+const ListExperts = (props) =>{
     
-
-    const handlechange1 = (t) =>{
-        setStime(t);
-        // console.log('time change called: ' + t);
-    }
     
-    const handlechange2 = (t) =>{
-    setSdate(t);
-    // console.log('date change called: ' + t);
+   
 
-    }
-    const handlechange3 = (t) =>{
-    setName(t);
-    // console.log('name change called: ' + t);
-    }
+   
+    // console.log(card)
+
+    // const handlechange1 = (t) =>{
+    //     setStime(t);
+    //     // console.log('time change called: ' + t);
+    // }
+    
+    // const handlechange2 = (t) =>{
+    // setSdate(t);
+    // // console.log('date change called: ' + t);
+
+    // }
+    // const handlechange3 = (t) =>{
+    // setName(t);
+    // // console.log('name change called: ' + t);
+    // }
 
 
     const exp = [
         {
+            id:"1",
             name : "Tirth Raval",
             source : "./img/gamer.png ",
             lang : "Hindi, English",
@@ -36,6 +39,7 @@ const ListExperts = () =>{
 
         },
         {
+            id:"2",
             name : "Namrata Thaker",
             source : " ./img/woman.png",
             lang : "Hindi, English",
@@ -44,6 +48,7 @@ const ListExperts = () =>{
 
         },
         {
+            id:"3",
             name : "Jinal Patel",
             source : "./img/woman.png",
             lang : "Hindi, English",
@@ -52,6 +57,7 @@ const ListExperts = () =>{
 
         },
         {
+            id:"4",
             name : "Vedant Shah",
             source : "./img/gamer.png",
             lang : "Hindi, English",
@@ -60,15 +66,15 @@ const ListExperts = () =>{
 
         }
     ]
-    console.log({ stime, sdate, sname });
+    // console.log({ stime, sdate, sname });
     return (
         <>
             {/* {console.log(useLocation())} */}
-            <Header path = {useLocation().pathname}  T = {stime}  D = {sdate} N ={sname}/>
+            {/* <Header path = {useLocation().pathname}  card ={card} /> */}
             <div style={{minHeight:"190vh"}}>
             {
                 exp.map( t =>
-                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call} setStime = {handlechange1} setSdate = {handlechange2} setName={handlechange3} /> 
+                    <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call}  id = {t.id} setCard = {props.setCard} card ={props.card} /> 
                 )
             }
                 
