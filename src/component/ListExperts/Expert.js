@@ -13,47 +13,73 @@ import { formatCountdown } from 'antd/lib/statistic/utils';
 
 const Expert = (props) =>{
     const [show, setShow] = useState(false);
-    const [value, onChange] = useState();
+    const [value, setValue] = useState(new Date());
     const [time, setDisplay] = useState(false);
     const [isTimePicked, setIsTimePicked] = useState(false);
+
+    const[stime, setStime] = useState('');
+    const[sdate, setSdate] = useState('');
+    // const[ sname, setName] = useState('');
+
+    
+   ;
 
     const handleClose = () => {
         setShow(false);
         setDisplay(false)
     
     }
-    const handleShow = () => setShow(true);
+    const handleShow = () => {
+        setShow(true);
+        // props.setName(props.name)
+    }
     const bookSuccsfull = ()=>{
         if (time === true && isTimePicked === true){
             alert("Appointment has been booked ");
+
+            if(sdate !== '' && stime !== ''){
+                props.setCard([{
+                    id: props.id,
+                    name:props.name,
+                    date:sdate,
+                    time:stime
+                    
+                }, ...props.card])
+            }
+          
+            setDisplay(false);
+            setIsTimePicked(false);
             setShow(false);
             
         }
         else if(time === true && isTimePicked === false){
             alert("Please select the time");
-            setShow(false);
+            // setShow(false);
 
         }
 
         else if (time === false && isTimePicked === true){
           
             alert("Please select valid appointment data ! ");
-            setShow(false);
+            // setShow(false);
         }
         else{
             alert("Please select valid appointment data and Time ! ");
-            setShow(false);
+            // setShow(false);
         }
         
          
     }
     const handleTime = (e) => {
-        props.setStime(e.target.value)
+        setStime(e.target.value)
+        // console.log(e.target.value)
         setIsTimePicked(true)
     }
 
     const handleChange = (e)=>{
-        props.setSdate(String(e))
+        setDisplay(true);
+        // console.log(typeof(e));
+        setSdate(String(e));
     }
 
     
@@ -82,8 +108,7 @@ const Expert = (props) =>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={handleChange} value={value} onClick = {() => setDisplay(true)} />
-                            
+                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} minDate ={value}/>
                             {   time ?  <Time time ={props.time_array} method = {handleTime}/>  : null  }         
                            
 
@@ -93,17 +118,6 @@ const Expert = (props) =>{
                         <Button variant="secondary" onClick={handleClose}>
                         Close
                         </Button>
-                        {/* {time ? isTimePicked ? <Button variant="primary" onClick={bookSuccsfull}>
-                            Book
-                            </Button> : <Button variant="primary" onClick={()=>{
-                                alert("please select time first")
-                            }}>
-                            Book
-                            </Button> :<Button variant="primary" onClick={()=>{
-                                alert("please select the date and time first")
-                            }}>
-                            Book
-                            </Button> } */}
                         <Button variant="primary" onClick={bookSuccsfull}>
                             Book
                         </Button>

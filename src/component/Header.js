@@ -12,9 +12,10 @@ import {MdLogout} from 'react-icons/md';
 
 const Header = (props) => {
   const navigation = useNavigate()
-
+ 
   const handleChange = ()=>{
-    navigation("/myappointments" , {state: [ {Time : props.T},{date : props.D}]})
+    
+    navigation("/myappointments" , {state: props.card})  
   }
   return (
     <div>
@@ -32,7 +33,7 @@ const Header = (props) => {
               </Nav>
             
             <div> 
-                  {props.path === '/bookAppointment' || props.path === '/history' || props.path === '/myappointments'?
+                  
                   <Dropdown>  
                         <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>
@@ -46,7 +47,7 @@ const Header = (props) => {
                         </Dropdown.Menu>  
                     </Dropdown> : <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
-                  }   
+                     
                     
 
                     

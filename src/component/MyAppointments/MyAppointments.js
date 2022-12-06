@@ -1,37 +1,83 @@
-import React from 'react'
-import Header from '../Header'
+import React, { useState } from 'react'
+
 import Table from 'react-bootstrap/Table';
-import { useLocation } from 'react-router';
 
-const MyAppointments =() => {
 
-const {state} = useLocation();
+import { Button } from 'react-bootstrap';
 
-let s = state[1].date
-let temp = s.split(" ")
-let final = temp[0]
-for(let i =1; i<4; i++){
-  final = final + " " + temp[i]
+import Time from '../ListExperts/Time';
+import Edit from './Edit';
+
+const MyAppointments =(props) => {
+  // const {state} = useLocation();
+  const [show, setShow] = useState(false);
+
+  const[modalAppoitment, setModalAppoitment] = useState({});
+
+
+
+  
+ 
+  // console.log(state);
+
+  const final = (s) => {
+    let temp = s.split(" ")
+    let str = temp[0]
+    for(let i =1; i<4; i++){
+    str = str + " " + temp[i]
+    }
+    return str;
+  }
+ 
+const handleShow = (t) => {
+    setShow(true);
+    setModalAppoitment(t);
+    // props.setName(props.name)
 }
+const handleClose = () =>{
+  setShow(false)
+}
+
+
 
   return (
     <>
-    <Header path = {useLocation().pathname}/>
-    <div style={{justifyContent:'center'}}>
-      <div  style={{alignItems:"center"}}>
-        <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>My Next Appointment</h2>  
-        { state[0].Time ? <div>
-          <h4 style={{marginTop : '50px'}}> Your appoitment has been booked succssesfully at this time {state[0].Time} and on  {final}.</h4>
-        <h4> Please connect with the expert using Call button </h4> 
-        <button class="btn btn-success"><a href='https://meet.google.com/rsg-weac-fii?pli=1' target="_blank" class = 'a' style={{fontSize:"25px"}}>Call</a></button>
-        </div> :
-        <h4 style={{marginTop : '50px'}}>You have not selected the Date and Time, Please go back and select</h4>
-        }
+    <div>
+       <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            props.card.map(t => (
+              <>
+              <tr key = {t.id}>
+                <td>{t.name}</td>
+                <td>{final(String(t.date))}</td>
+                <td>{t.time}</td>
+                
+                <td><Button onClick={() =>{handleShow(t)}}>Edit</Button></td>
+                
+              </tr>
+             
+              </>
+              
+            ))
+            
+          }
+          {show ? <Edit modalAppoitment  = {modalAppoitment} card ={props.card} setCard = {props.setCard} close = {handleClose}/> : null}
+        </tbody>
 
-        
-      </div> 
-
+       </Table>
     </div>
+  
+    
+   
     </>
   )
 }

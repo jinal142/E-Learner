@@ -12,11 +12,13 @@ const Home = () => {
 
 
   return (
+
     <div style={{minHeight: "100vh",
     position: "relative"}}>
         
         <Header/>
-        
+
+  
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
