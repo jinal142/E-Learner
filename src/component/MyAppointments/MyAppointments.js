@@ -70,7 +70,7 @@ const handleClose = () =>{
             ))
             
           }
-          {show ? <Edit modalAppoitment  = {modalAppoitment} card ={props.card} setcard = {props.setCard} close = {handleClose}/> : null}
+          {show ? <Edit modalAppoitment  = {modalAppoitment} card ={props.card} setCard = {props.setCard} close = {handleClose}/> : null}
         </tbody>
 
        </Table>
