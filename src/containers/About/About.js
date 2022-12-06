@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player';
 export const About = () => {
   return (
     <>
-    <Header/>
+    
     <div style={{justifyContent:'center'}}>
       <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
         <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>About us</h2>  

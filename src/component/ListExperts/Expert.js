@@ -108,7 +108,7 @@ const Expert = (props) =>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} minDate ={value}/>
+                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} minDate ={new Date()}/>
                             {   time ?  <Time time ={props.time_array} method = {handleTime}/>  : null  }         
                            
 

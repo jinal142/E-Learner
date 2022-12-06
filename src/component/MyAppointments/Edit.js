@@ -41,17 +41,33 @@ const Edit = (props)=>{
     
 
    
-     card.filter((ele)=> ele.id === id)[0].id = id;
-     card.filter((ele)=> ele.id === id)[0].date= String(value);
+     
 
      const bookSuccsfull = ()=>{
         if (timeDisplay === true && isTimePicked === true){
-            alert("Appointment has been Edited ");
+            
+            if(sdate === date && stime === time){
+                alert("Time and date both are selected, select other time and date");
+                setDisplay(false);
+            }
+            else if(sdate === date && stime !== time)
+            {
+                alert("Appointment has been Edited ");
             card.filter((ele)=> ele.id === id)[0].date= sdate;
             card.filter((ele)=> ele.id === id)[0].time= stime;
             setDisplay(false);
             setIsTimePicked(false);
             props.close()
+            }
+            else{
+                alert("Appointment has been Edited ");
+                card.filter((ele)=> ele.id === id)[0].date= sdate;
+            card.filter((ele)=> ele.id === id)[0].time= stime;
+            setDisplay(false);
+            setIsTimePicked(false);
+            props.close()
+            }
+            
             
         }
         else if(timeDisplay === true && isTimePicked === false){
