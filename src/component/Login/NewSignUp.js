@@ -9,12 +9,26 @@ function NewSignUp(props) {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const[email , setEmail] = useState('');
+  const [pwd, setPwd] = useState('');
   const navigate = useNavigate()
 
   const handleChange = (e) => {
+    
+    
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
+
+  const handlePassword = (e) =>{
+    
+    setPwd(e.target.value);
+  }
+  const handleEmail = (e) =>{
+    console.log(e.target.value)
+    setEmail(e.target.value);
+  }
+
 
   const handleSubmit = (e) => {
     //console.log("Inside handleSubmit()");  
@@ -79,7 +93,7 @@ function NewSignUp(props) {
 
         setIsSubmit(true);
         props.setHeaderShow(true);
-        navigate('/bookAppointment',{replace : true});
+        navigate('/newlogin', {state : [email,pwd], replace : true} );
         
     }
    }
@@ -127,13 +141,13 @@ function NewSignUp(props) {
           
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label style={{ marginTop:"15px", fontSize:"20px", alignContent:"left"}}>Username/Email ID</Form.Label>
-            <Form.Control className='InputLogin' name="email" type="text" placeholder="Enter Username/Email ID"  value={formValues.email} onChange={handleChange}/>
+            <Form.Control className='InputLogin' name="email" type="text" placeholder="Enter Username/Email ID"  value={formValues.email} onChange={(e) =>{handleChange(e); handleEmail(e);}}/>
         </Form.Group>
         <p>{formErrors.email}</p>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label style={{ marginTop:"15px", fontSize:"20px"}}>Password</Form.Label>
-            <Form.Control className='InputLogin' name="password" type="password" placeholder="Enter password"  value={formValues.password} onChange={handleChange}/>
+            <Form.Control className='InputLogin' name="password" type="password" placeholder="Enter password"  value={formValues.password} onChange={(e) =>{handleChange(e); handlePassword(e);}}/>
         </Form.Group>
         <p>{formErrors.password}</p>
         

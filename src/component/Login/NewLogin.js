@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import "./NewLogin.css";
 import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 function NewLogin(props) {
+  const {state} = useLocation();
   const initialValues = {email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -58,7 +59,7 @@ function NewLogin(props) {
     
         if((values.email==="abc@gmail.com" && values.password==="1234") || 
         (values.email==="xyz@gmail.com" && values.password==="2468") || 
-        (values.email==="pqr@gmail.com" && values.password==="1010")){
+        (values.email==="pqr@gmail.com" && values.password==="1010") ||(values.email===state[0] && values.password===state[1]) ) {
             setIsSubmit(true);
             props.setHeaderShow(true);
             navigate('/bookAppointment',{replace : true});

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router';
+import { useNavigate,useLocation } from 'react-router';
 import { Container, Form, Button } from 'react-bootstrap'
 import { message } from 'antd';
 //import axios from 'axios'
@@ -11,6 +11,7 @@ import Header from '../Header';
 
 const Login = () => {
 
+  const {state} = useLocation();
   const navigate = useNavigate()
 
   const error = () => {
