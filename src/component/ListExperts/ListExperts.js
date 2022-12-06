@@ -69,8 +69,7 @@ const ListExperts = (props) =>{
     // console.log({ stime, sdate, sname });
     return (
         <>
-            {/* {console.log(useLocation())} */}
-            {/* <Header path = {useLocation().pathname}  card ={card} /> */}
+           
             <div style={{minHeight:"190vh"}}>
             {
                 exp.map( t =>

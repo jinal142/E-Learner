@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
 
-    <div style={{minHeight: "100vh",
+    <div style={{minHeight: "170vh",
     position: "relative"}}>
         
         {/* <Header/> */}
