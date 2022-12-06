@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useNavigate} from "react-router-dom";
+  import {Link, useNavigate} from "react-router-dom";
 import {Navbar, Nav, Container} from 'react-bootstrap'; 
 import "./Style.css";
 import { FaUserCircle } from "react-icons/fa";
@@ -44,7 +44,7 @@ const Header = (props) => {
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/"><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
-                    </Dropdown> : <Nav><Nav.Link as ={Link} to ="/login" style={{marginRight:"20px", textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
+                    </Dropdown> : <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
                   }   
                     

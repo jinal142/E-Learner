@@ -36,7 +36,7 @@ const SearchBar = () =>{
         }
     }
    return(
-    <Container className='home' style={{marginTop:"30px"}}>
+    <div className='home' style={{marginTop:"40px", height:"50px"}}>
             
 
             <div className="SearchContainer" class="d-flex justify-content-center" >
@@ -59,7 +59,7 @@ const SearchBar = () =>{
             </div>    
 
             
-        </Container>
+        </div>
    )
 
 }
