@@ -21,9 +21,9 @@ const Login = () => {
     navigate("/", { replace: true })
   }
 
-  const goToSignUp = () => {
-    navigate("/signup", { replace: true })
-  }
+  // const goToSignUp = () => {
+  //   navigate("/signup", { replace: true })
+  // }
 
   const formHandler = (event) => {
     event.preventDefault()
