@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./NewLogin.css";
-import "./Login.css"
 import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
 import { useNavigate } from 'react-router';
@@ -47,7 +46,13 @@ function NewSignUp() {
     console.log("Inside handleSubmit()");
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    
+
+    if (!values.firstName) {
+      errors.firstName = "First Name is required!";
+    }
+    if (!values.lastName) {
+      errors.lastName = "Last Name is required!";
+    }
     if (!values.email) {
       errors.email = "Email is required!";
     } else if (!regex.test(values.email)) {
@@ -93,7 +98,7 @@ function NewSignUp() {
 
   return (
     <>
-    <Header/>
+    
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
       <form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>
@@ -108,14 +113,16 @@ function NewSignUp() {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label style={{ marginTop:"15px", fontSize:"20px"}}>First Name</Form.Label>
-            <Form.Control className='InputLogin' type="text" placeholder="Enter First Name " />
+            <Form.Control className='InputLogin' type="text" placeholder="Enter First Name " name="firstName" value={formValues.firstName} onChange={handleChange}/>
           </Form.Group>
+          <p>{formErrors.firstName}</p>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label style={{ marginTop:"15px", fontSize:"20px"}}>Last Name</Form.Label>
-            <Form.Control className='InputLogin' type="text" placeholder="Enter Last Name" />
+            <Form.Control className='InputLogin' type="text" placeholder="Enter Last Name" name="lastName" value={formValues.lastName} onChange={handleChange}/>
           </Form.Group>
-
+          <p>{formErrors.lastName}</p>
+          
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label style={{ marginTop:"15px", fontSize:"20px", alignContent:"left"}}>Username/Email ID</Form.Label>
             <Form.Control className='InputLogin' name="email" type="text" placeholder="Enter Username/Email ID"  value={formValues.email} onChange={handleChange}/>

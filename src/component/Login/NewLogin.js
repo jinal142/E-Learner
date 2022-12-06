@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./NewLogin.css";
-import "./Login.css"
 import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
 import { useNavigate } from 'react-router';
@@ -80,7 +79,6 @@ function NewLogin() {
 
   return (
     <>
-    <Header/>
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
       <form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>
