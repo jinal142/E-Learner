@@ -4,7 +4,7 @@ import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
 import { useNavigate } from 'react-router';
 
-function NewSignUp() {
+function NewSignUp(props) {
   const initialValues = {email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -78,6 +78,7 @@ function NewSignUp() {
     else{
 
         setIsSubmit(true);
+        props.setHeaderShow(true);
         navigate('/bookAppointment',{replace : true});
         
     }
@@ -99,6 +100,7 @@ function NewSignUp() {
   return (
     <>
     
+  
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
       <form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>

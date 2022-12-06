@@ -4,7 +4,7 @@ import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
 import { useNavigate } from 'react-router';
 
-function NewLogin() {
+function NewLogin(props) {
   const initialValues = {email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -60,6 +60,7 @@ function NewLogin() {
         (values.email==="xyz@gmail.com" && values.password==="2468") || 
         (values.email==="pqr@gmail.com" && values.password==="1010")){
             setIsSubmit(true);
+            props.setHeaderShow(true);
             navigate('/bookAppointment',{replace : true});
         }
 
@@ -79,6 +80,7 @@ function NewLogin() {
 
   return (
     <>
+    {/* <Header/> */}
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
       <form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>

@@ -23,9 +23,10 @@ import { useState } from 'react';
 
 function App() {
   const [card, setCard] = useState([]);
+  const[headerShow,  setHeaderShow] = useState(false)
   return (
          <BrowserRouter>
-         <Header path = {useLocation.path}/>
+         <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow}/>
           <div className="App" style={{backgroundColor:"azure"}}> 
             
             <div>              
@@ -34,11 +35,11 @@ function App() {
                   <Route path="/" element={<Home/>} />
                   <Route path='/results' element={<SearchResults />}/>
 
-                  <Route path="/newlogin" element={ <NewLogin />} />
-                  <Route path = '/bookAppointment' element = {<ListExperts/>}/>
+                  <Route path="/newlogin" element={ <NewLogin  setHeaderShow = {setHeaderShow}/>} />
+                  <Route path = '/bookAppointment' element = {<ListExperts card = {card} setCard = {setCard}/>}/>
                   <Route path ="/history" element = {<History/>}/>
-                  <Route path ="/myappointments" element = {<MyAppointments/>}/>
-                  <Route path="/newsignup" element={ <NewSignUp />} />
+                  <Route path ="/myappointments" element = {<MyAppointments card = {card} setCard = {setCard}/>}/>
+                  <Route path="/newsignup" element={ <NewSignUp setHeaderShow ={setHeaderShow}/>} />
 
                   
                   <Route path="/about" element={<About/>} />
