@@ -35,21 +35,54 @@ const Expert = (props) =>{
     }
     const bookSuccsfull = ()=>{
         if (time === true && isTimePicked === true){
-            alert("Appointment has been booked ");
+            console.log(props.card.filter((ele) => ele.id === props.id))
+             
+            if(props.card.filter((ele) => ele.id === props.id).length === 0){
+                alert("Appointment has been booked ");
+                if(sdate !== '' && stime !== ''){
+                    props.setCard([{
+                        id: props.id,
+                        name:props.name,
+                        date:sdate,
+                        time:stime
+                        
+                    }, ...props.card])
+                }
+                setDisplay(false);
+                    setIsTimePicked(false);
+                    setShow(false);
+                    setValue(new Date())
 
-            if(sdate !== '' && stime !== ''){
-                props.setCard([{
-                    id: props.id,
-                    name:props.name,
-                    date:sdate,
-                    time:stime
-                    
-                }, ...props.card])
             }
+
+            else if(props.card.filter((ele) => ele.id === props.id)[0].date === sdate && props.card.filter((ele) => ele.id === props.id)[0].time === stime )
+            {
+                alert("Time and date both are selected, select other time and date");
+                setDisplay(false);
+                setValue(new Date())
+            }
+            
+            else{
+                alert("Appointment has been booked ");
+                if(sdate !== '' && stime !== ''){
+                    props.setCard([{
+                        id: props.id,
+                        name:props.name,
+                        date:sdate,
+                        time:stime
+                        
+                    }, ...props.card])
+                }
+                setDisplay(false);
+                    setIsTimePicked(false);
+                    setShow(false);
+                    setValue(new Date())
+
+            }
+
+            
           
-            setDisplay(false);
-            setIsTimePicked(false);
-            setShow(false);
+           
             
         }
         else if(time === true && isTimePicked === false){
