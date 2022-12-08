@@ -513,27 +513,33 @@ return (
                   </button>
               
                 </div>  */}  
-          <div style={{ width: 800 }}>
-          
-          <ReactSearchAutocomplete
-            onSearch={handleOnSearch}
-            onHover={handleOnHover}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            items={items}
-            autoFocus            
-            formatResult={formatResult}
-            style={{boxShadow: "5px 5px 5px rgba(0,0,0,.5)"}}
-            
-          />
-          <div className="SearchContainer" class="d-flex justify-content-center">
-                    
-                    <button class="btn btn-lg btn-primary" onClick={handleEnter}> 
-                      <FiSearch style={{height:"25px", width:"25px"}}/>
-                    </button>
-                
-           </div>
-        </div>
+          <div className='home' style={{marginTop:"40px", height:"50px"}}>
+
+<div style={{ width: 800 }}>
+  
+  <ReactSearchAutocomplete
+    onSearch={handleOnSearch}
+    onHover={handleOnHover}
+    onSelect={handleOnSelect}
+    onFocus={handleOnFocus}
+    items={items}
+    autoFocus            
+    formatResult={formatResult}
+    style={{boxShadow: "5px 5px 5px rgba(0,0,0,.5)"}}
+    
+  />
+</div>
+
+&nbsp;&nbsp;
+
+<div className="SearchContainer" class="d-flex justify-content-center">
+        
+            <button class="btn btn-lg btn-primary" onClick={handleEnter} style={{boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
+                <FiSearch style={{height:"25px", width:"25px"}}/>
+            </button>
+   
+    </div>
+</div>
                 
             </div>
 
