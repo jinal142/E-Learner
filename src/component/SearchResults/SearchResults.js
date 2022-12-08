@@ -385,7 +385,7 @@ const SearchResults = (prop) => {
     setMsg(e.target.value);
   }
 
-  const  handlSearch = () => {
+  const  handleSearch = () => {
     console.log("in search");
     const searchTerm = msg.toUpperCase();
     const allowedSearchTerms = new Set(['UBER', 'VENMO', 'AIRBNB', 'DOORDASH', 'WALMART'])
@@ -407,20 +407,20 @@ const SearchResults = (prop) => {
     console.log(e);
     if(e.key === "Enter"){
         e.preventDefault();
-         handlSearch();
+        handleSearch();
     }
   }
   const navigate = useNavigate()
 
   const handleLogin =()=>{
-    navigate("/login",{replace:true})
+    navigate("/newlogin",{replace:true})
   }
     
     return(
         <>
             {/* <Header/> */}
             
-            <Container className='home' style={{marginTop:"50px"}}>            
+            <div className='home' style={{marginTop:"50px"}}>            
 
                 <div className="SearchContainer" class="d-flex justify-content-center">
                   <Form className='form-control form-control-lg form-control-borderless'>
@@ -435,65 +435,71 @@ const SearchResults = (prop) => {
                 {console.log(msg)}
                 <div className="SearchContainer" class="d-flex justify-content-center">
                     
-                  <button class="btn btn-lg btn-primary" onClick={handlSearch}> 
+                  <button class="btn btn-lg btn-primary" onClick={handleSearch}> 
                     <FiSearch style={{height:"25px", width:"25px"}}/>
                   </button>
               
                 </div>   
                 
-            </Container>
+            </div>
 
 
-            <Container  style = {{marginTop:"20px", minHeight:"100vh"}}>
+            <div  style = {{marginTop:"20px"}}>
                 
                 <Row  style={{marginTop:"80px"}}>
-                  <Col md={4} sm={4} lg={4}>
-                  <div class="bg-secondary rounded p-3" style={{ width: 450, height: 700}}>
-                  <h3 style={{color :'white'}}> 1. Image  Solution</h3>
-                  <div className="home-1">         
-                    { msg.toUpperCase() === "UBER" ? <Cards dataSource = {uberFields}/> :
-                    msg.toUpperCase() === "VENMO"? <Cards dataSource = {venmoFields}/> :
-                    msg.toUpperCase() === "AIRBNB"? <Cards dataSource = {airbnbFields}/> :
-                    msg.toUpperCase() === "DOORDASH"? <Cards dataSource = {doordashFields}/> :
-                    msg.toUpperCase() === "WALMART"? <Cards dataSource = {walmartFields}/> : null
-                    }
-                    
-                  </div>
-                  </div>
-
-                  </Col>
+                  
                   <Col md={2} sm={2} lg={2}></Col>
-                    <Col  md={4} sm={4} lg={4}>
-                    <div class="bg-secondary rounded p-2" style={{ width: 550, height: 480}}>
-                    <h3 style={{color :'white'}}>2. Video Solution</h3>
-                    <div className='video'>
-                    { msg.toUpperCase() === "UBER" ? <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" /> :
-                    msg.toUpperCase() === "VENMO"? <ReactPlayer url =" https://www.youtube.com/watch?v=O61hMHYWqc8"/> : 
-                    msg.toUpperCase() === "AIRBNB"? <ReactPlayer url ="https://www.youtube.com/watch?v=gOqRiXDGNCc"/>:
-                    msg.toUpperCase() === "DOORDASH"? <ReactPlayer url =" https://www.youtube.com/watch?v=F3uRbXg46vM"/>:
-                    msg.toUpperCase() === "WALMART"? <ReactPlayer url =" https://www.youtube.com/watch?v=-QWyPzTa6wI"/>:null
-                    //msg.toUpperCase() !== "UBER" || "VENMO" || "AIRBNB" || "DOORDASH" || "WALMART"? errorsearch():null
-                    }
-                    
-                    
-                    
+                  
+                  <Col md={4} sm={4} lg={4}>
+                    <div class="bg-secondary rounded p-3" style={{ width: 450, height: 700}}>
+                      
+                      <h3 style={{color :'white'}}> 1. Image  Solution</h3>
+                      
+                      <div className="home-1">         
+                        { msg.toUpperCase() === "UBER" ? <Cards dataSource = {uberFields}/> :
+                        msg.toUpperCase() === "VENMO"? <Cards dataSource = {venmoFields}/> :
+                        msg.toUpperCase() === "AIRBNB"? <Cards dataSource = {airbnbFields}/> :
+                        msg.toUpperCase() === "DOORDASH"? <Cards dataSource = {doordashFields}/> :
+                        msg.toUpperCase() === "WALMART"? <Cards dataSource = {walmartFields}/> : null
+                        }
+                        
+                      </div>
                     </div>
-                    </div>
-                    <div class="bg-secondary rounded"style={{ width: 550, height: 190,marginTop:30}}>
-                      &nbsp;
-                      &nbsp;
-                      &nbsp;
-                      &nbsp;
-                      &nbsp;
-                      &nbsp;
-                    <h3 style={{color :'white',padding:30}}>3. Still confused?
-                    <Button className = "Button1 m-4" onClick={handleLogin}>Talk with an expert</Button>
-                    </h3>
-                    
-                </div>
-                </Col>
+                  </Col>
+
+                 
+                  <Col  md={4} sm={4} lg={4}>
+                      <div class="bg-secondary rounded p-2" style={{ width: 550, height: 480}}>
+                        
+                          <h3 style={{color :'white'}}>2. Video Solution</h3>
+                          
+                          <div className='video'>
+                          { msg.toUpperCase() === "UBER" ? <ReactPlayer url = "https://www.youtube.com/watch?v=zKL5FuZia-E" /> :
+                          msg.toUpperCase() === "VENMO"? <ReactPlayer url =" https://www.youtube.com/watch?v=O61hMHYWqc8"/> : 
+                          msg.toUpperCase() === "AIRBNB"? <ReactPlayer url ="https://www.youtube.com/watch?v=gOqRiXDGNCc"/>:
+                          msg.toUpperCase() === "DOORDASH"? <ReactPlayer url =" https://www.youtube.com/watch?v=F3uRbXg46vM"/>:
+                          msg.toUpperCase() === "WALMART"? <ReactPlayer url =" https://www.youtube.com/watch?v=-QWyPzTa6wI"/>:null
+                          //msg.toUpperCase() !== "UBER" || "VENMO" || "AIRBNB" || "DOORDASH" || "WALMART"? errorsearch():null
+                          }                
+                          
+                          </div>
+                      </div>
+
+                      <div class="bg-secondary rounded"style={{ width: 550, height: 190,marginTop:30}}>
+                          &nbsp;
+                          &nbsp;
+                          &nbsp;
+                          &nbsp;
+                          &nbsp;
+                          &nbsp;
+                        <h3 style={{color :'white',padding:30}}>3. Still confused?
+                          <Button className = "Button1 m-4" onClick={handleLogin}>Talk with an expert</Button>
+                        </h3>
+                      
+                      </div>
+                    </Col>
                 </Row> 
-            </Container>
+            </div>
         </>
     );
 }

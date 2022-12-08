@@ -17,6 +17,8 @@ import MyAppointments from './component/MyAppointments/MyAppointments';
 import Header from './component/Header';
 import { useLocation } from 'react-router';
 import { useState } from 'react';
+import Bread from './component/Bread';
+
 
 
 
@@ -24,11 +26,20 @@ import { useState } from 'react';
 function App() {
   const [card, setCard] = useState([]);
   const[headerShow,  setHeaderShow] = useState(false)
+  // const [crumbs, setCrumbs] = useState(['Home']);
+
+  // const selected = crumb => {
+  //   console.log(crumb);
+  // }
+
   return (
          <BrowserRouter>
          
           <div className="App" style={{backgroundColor:"azure",minHeight:"130vh"}}> 
             <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow}/>
+            
+            {/* <Bread crumbs={ crumbs } selected={ selected } /> */}
+            
             <div>           
               
                 <Routes>

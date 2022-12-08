@@ -11,14 +11,12 @@ import NoteCard from '../../component/NoteCard/NoteCard';
 const Home = () => {
 
 
+    
+
   return (
 
-    <div style={{minHeight: "170vh",
-    position: "relative"}}>
+    <div style={{minHeight: "170vh",position: "relative"}}>
         
-        {/* <Header/> */}
-
-  
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
