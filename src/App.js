@@ -26,10 +26,10 @@ function App() {
   const[headerShow,  setHeaderShow] = useState(false)
   return (
          <BrowserRouter>
-         <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow}/>
-          <div className="App" style={{backgroundColor:"azure"}}> 
-            
-            <div>              
+         
+          <div className="App" style={{backgroundColor:"azure",minHeight:"130vh"}}> 
+            <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow}/>
+            <div>           
               
                 <Routes>
                   <Route path="/" element={<Home/>} />

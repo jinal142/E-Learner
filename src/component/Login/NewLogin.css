@@ -32,9 +32,9 @@ body {
     font-size: larger;
   }
   
-  button {
+  /* button {
     background: #0563b4 !important;
-  }
+  } */
   p {
     color: red;
   }

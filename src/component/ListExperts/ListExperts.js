@@ -70,7 +70,7 @@ const ListExperts = (props) =>{
     return (
         <>
            
-            <div style={{minHeight:"190vh"}}>
+            <div>
             {
                 exp.map( t =>
                     <Expert src ={t.source} name = {t.name} lang = {t.lang} time_array = {t.available} call_val = {t.call}  id = {t.id} setCard = {props.setCard} card ={props.card} /> 

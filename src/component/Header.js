@@ -32,9 +32,9 @@ const Header = (props) => {
                 <Nav.Link as={Link} to ="/about">About Us</Nav.Link>
               </Nav>
             
-            <div> 
+            <div > 
                 { props.headerShow ? <Dropdown>  
-                        <Dropdown.Toggle variant=" primary" id="dropdown-basic">  
+                        <Dropdown.Toggle variant="dark" id="dropdown-basic">  
                         <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>
                         </Dropdown.Toggle>  
     
@@ -47,8 +47,7 @@ const Header = (props) => {
                     </Dropdown> : <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
                 
-                }  
-                  
+                }           
                      
                     
 
