@@ -62,6 +62,7 @@ function NewLogin(props) {
         (values.email==="pqr@gmail.com" && values.password==="1010") ) {
             setIsSubmit(true);
             props.setHeaderShow(true);
+            props.setIsLogin(true);
             navigate('/bookAppointment',{replace : true});
         }
 

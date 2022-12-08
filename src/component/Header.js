@@ -42,7 +42,7 @@ const Header = (props) => {
                             <Dropdown.Item  onClick={handleChange}><FaRegCalendarTimes/>My Appointments</Dropdown.Item>
                             <Dropdown.Item as={Link} to ="/history" ><AiOutlineHistory/>My History</Dropdown.Item>  
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
-                            <Dropdown.Item as ={Link} to = "/" onClick={() => props.setHeaderShow(false)}><MdLogout/>Logout</Dropdown.Item>  
+                            <Dropdown.Item as ={Link} to = "/" onClick={() => {props.setHeaderShow(false); props.setIsLogin(false)}}><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
                     </Dropdown> : <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
