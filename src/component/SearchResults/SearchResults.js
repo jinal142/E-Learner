@@ -460,7 +460,7 @@ const handleChange = (e)=>{
 
 
     if (!allowedSearchTerms.has(searchTerm)) {
-        //navigate("/",{replace:true})
+        navigate("/",{replace:true})
         alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
         return
     } else {
@@ -499,66 +499,51 @@ return (
 )
 }
 
-    return(
+    return (
         <>
-            {/* <Header/> */}
+            
             <div>
-            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+              <Breadcrumb crumbs={ crumbs } selected={ selected }  />
             </div>
+
             <div className='home' style={{marginTop:"50px"}}>            
 
       
                 <div className="SearchContainer" class="d-flex justify-content-center">
 
 
-                {/* <div className="SearchContainer" class="d-flex justify-content-center">
+                
+                      <div className='home' style={{marginTop:"40px", height:"50px"}}>
 
-                  <Form className='form-control form-control-lg form-control-borderless'>
-                    
-                      <Form.Control  style={{width:"800px"}} onKeyDown={(e)=>handleEnter(e)}  value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
+                          <div style={{ width: 800 }}>
                             
-                  </Form>
-                </div>   
-                
-                &nbsp;
-                &nbsp;
-                {console.log(msg)}
-                <div className="SearchContainer" class="d-flex justify-content-center">
-                    
-                  <button class="btn btn-lg btn-primary" onClick={handleSearch}> 
-                    <FiSearch style={{height:"25px", width:"25px"}}/>
-                  </button>
-              
-                </div>  */}  
-          <div className='home' style={{marginTop:"40px", height:"50px"}}>
+                            <ReactSearchAutocomplete
+                              onSearch={handleOnSearch}
+                              onHover={handleOnHover}
+                              onSelect={handleOnSelect}
+                              onFocus={handleOnFocus}
+                              items={items}
+                              autoFocus            
+                              formatResult={formatResult}
+                              style={{boxShadow: "5px 5px 5px rgba(0,0,0,.5)"}}
+                              
+                            />
+                          </div>
 
-<div style={{ width: 800 }}>
-  
-  <ReactSearchAutocomplete
-    onSearch={handleOnSearch}
-    onHover={handleOnHover}
-    onSelect={handleOnSelect}
-    onFocus={handleOnFocus}
-    items={items}
-    autoFocus            
-    formatResult={formatResult}
-    style={{boxShadow: "5px 5px 5px rgba(0,0,0,.5)"}}
-    
-  />
-</div>
+                          &nbsp;&nbsp;
 
-&nbsp;&nbsp;
+                          <div className="SearchContainer" class="d-flex justify-content-center">
+                                  
+                                      <button class="btn btn-lg btn-primary" onClick={handleEnter} style={{boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
+                                          <FiSearch style={{height:"25px", width:"25px"}}/>
+                                      </button>
+                            
+                          </div>
 
-<div className="SearchContainer" class="d-flex justify-content-center">
-        
-            <button class="btn btn-lg btn-primary" onClick={handleEnter} style={{boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
-                <FiSearch style={{height:"25px", width:"25px"}}/>
-            </button>
-   
-    </div>
-</div>
-                
-            </div>
+                </div>
+
+               </div> 
+              </div>
 
 
             <div  style = {{marginTop:"20px"}}>
