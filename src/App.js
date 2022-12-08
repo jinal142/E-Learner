@@ -26,6 +26,7 @@ import Bread from './component/Bread';
 function App() {
   const [card, setCard] = useState([]);
   const[headerShow,  setHeaderShow] = useState(false)
+  const [isLogin, setIsLogin] = useState(false)
   // const [crumbs, setCrumbs] = useState(['Home']);
 
   // const selected = crumb => {
@@ -36,7 +37,7 @@ function App() {
          <BrowserRouter>
          
           <div className="App" style={{backgroundColor:"azure",minHeight:"130vh"}}> 
-            <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow}/>
+            <Header headerShow = {headerShow} setHeaderShow = {setHeaderShow} setIsLogin = {setIsLogin}/>
             
             {/* <Bread crumbs={ crumbs } selected={ selected } /> */}
             
@@ -44,10 +45,10 @@ function App() {
               
                 <Routes>
                   <Route path="/" element={<Home/>} />
-                  <Route path='/results' element={<SearchResults />}/>
+                  <Route path='/results' element={<SearchResults isLogin = {isLogin}/>}/>
 
-                  <Route path="/newlogin" element={ <NewLogin  setHeaderShow = {setHeaderShow}/>} />
-                  <Route path = '/bookAppointment' element = {<ListExperts card = {card} setCard = {setCard}/>}/>
+                  <Route path="/newlogin" element={ <NewLogin  setHeaderShow = {setHeaderShow} setIsLogin = {setIsLogin}/>} />
+                  <Route path = '/bookAppointment' element = {<ListExperts card = {card} setCard = {setCard} />}/>
                   <Route path ="/history" element = {<History/>}/>
                   <Route path ="/myappointments" element = {<MyAppointments card = {card} setCard = {setCard}/>}/>
                   <Route path="/newsignup" element={ <NewSignUp setHeaderShow ={setHeaderShow}/>} />

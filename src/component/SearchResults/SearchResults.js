@@ -4,7 +4,10 @@ import {FlashcardComponent} from 'react-flashcard'
 import {FiSearch} from 'react-icons/fi'
 import {Row,Col, Form} from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import Breadcrumb from '../../component/Breadcrumb'
+
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import {Container, Button} from 'react-bootstrap';
 import Cards from '../FlashCards/Cards';
@@ -12,6 +15,7 @@ import Header from '../Header';
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import { message } from 'antd';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 
@@ -375,7 +379,24 @@ const walmartFields = [
 }
 ]
 
-const SearchResults = (prop) => {
+const SearchResults = (props) => {
+  const items = [
+    {
+      name: 'Uber'
+    },
+    {
+      name: 'Airbnb'
+    },
+    {
+      name: 'Walmart'
+    },
+    {
+      name: 'Doordash'
+    },
+    {
+      name: 'Venmo'
+    }
+  ]
 
   const [crumbs, setCrumbs] = useState(['Home','SearchResults']);
   const selected = crumb => {
@@ -384,14 +405,15 @@ const SearchResults = (prop) => {
 
   const {state} = useLocation();
   console.log(state);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(state.search);
   const [msg, setMsg] = useState(state.search);
 
-  const handleChange = (e)=>{
+  
+/* 
+const handleChange = (e)=>{
     
     setMsg(e.target.value);
   }
-
   const  handleSearch = () => {
     console.log("in search");
     const searchTerm = msg.toUpperCase();
@@ -405,9 +427,6 @@ const SearchResults = (prop) => {
     } else {
       navigate("/results",{ state : {search: msg} },{replace:true})
     }
-    
-    
-    
 
 }
   const handleEnter = (e) =>{
@@ -416,13 +435,70 @@ const SearchResults = (prop) => {
         e.preventDefault();
         handleSearch();
     }
-  }
+  } */
   const navigate = useNavigate()
 
   const handleLogin =()=>{
-    navigate("/newlogin",{replace:true})
+    if(props.isLogin){
+      // console.log("Tirth")
+      navigate("/bookAppointment",{replace:true})
+    }
+    else{
+      console.log(props.isLogin)
+      navigate("/newlogin",{replace:true})
+    }
+    
   }
     
+  const handleEnter = (e) =>{
+    
+        
+    // console.log(e.target.value)
+    console.log("in search");
+    const searchTerm = search.toUpperCase();
+    const allowedSearchTerms = new Set(['UBER', 'VENMO', 'AIRBNB', 'DOORDASH', 'WALMART'])
+
+
+    if (!allowedSearchTerms.has(searchTerm)) {
+        //navigate("/",{replace:true})
+        alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
+        return
+    } else {
+        setMsg(search)
+        navigate("/results",{ state : {search} },{replace:true})
+     }
+
+}
+
+const handleOnSearch = (string, results) => {
+// onSearch will have as the first callback parameter
+// the string searched and for the second the results.
+//console.log(string, results)
+setSearch(string)
+}
+
+const handleOnHover = (result) => {
+// the item hovered
+console.log(result)
+}
+
+const handleOnSelect = (item) => {
+// the item selected
+//console.log(item)
+setSearch(item.name)
+}
+
+const handleOnFocus = () => {
+console.log('Focused')
+}
+const formatResult = (item) => {
+return (
+  <>
+    <span>{item.name}</span>
+  </>
+)
+}
+
     return(
         <>
             {/* <Header/> */}
@@ -430,8 +506,13 @@ const SearchResults = (prop) => {
             <Breadcrumb crumbs={ crumbs } selected={ selected }  />
             </div>
             <div className='home' style={{marginTop:"50px"}}>            
+
       
                 <div className="SearchContainer" class="d-flex justify-content-center">
+
+
+                {/* <div className="SearchContainer" class="d-flex justify-content-center">
+
                   <Form className='form-control form-control-lg form-control-borderless'>
                     
                       <Form.Control  style={{width:"800px"}} onKeyDown={(e)=>handleEnter(e)}  value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
@@ -448,7 +529,34 @@ const SearchResults = (prop) => {
                     <FiSearch style={{height:"25px", width:"25px"}}/>
                   </button>
               
-                </div>   
+                </div>  */}  
+          <div className='home' style={{marginTop:"40px", height:"50px"}}>
+
+<div style={{ width: 800 }}>
+  
+  <ReactSearchAutocomplete
+    onSearch={handleOnSearch}
+    onHover={handleOnHover}
+    onSelect={handleOnSelect}
+    onFocus={handleOnFocus}
+    items={items}
+    autoFocus            
+    formatResult={formatResult}
+    style={{boxShadow: "5px 5px 5px rgba(0,0,0,.5)"}}
+    
+  />
+</div>
+
+&nbsp;&nbsp;
+
+<div className="SearchContainer" class="d-flex justify-content-center">
+        
+            <button class="btn btn-lg btn-primary" onClick={handleEnter} style={{boxShadow: "5px 5px 5px rgba(0,0,0,.4)"}}> 
+                <FiSearch style={{height:"25px", width:"25px"}}/>
+            </button>
+   
+    </div>
+</div>
                 
             </div>
 
