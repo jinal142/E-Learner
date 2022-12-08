@@ -1,12 +1,23 @@
 import React from 'react'
 import Header from '../../component/Header';
 import ReactPlayer from 'react-player';
+import Breadcrumb from '../../component/Breadcrumb'
+import { useState } from 'react';
 
 export const About = () => {
+  const [crumbs, setCrumbs] = useState(['About Us']);
+  const selected = crumb => {
+      console.log(crumb);
+    }
+
   return (
     <>
     
     <div style={{justifyContent:'center'}}>
+       <div>
+            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+        </div>
+
       <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
         <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>About us</h2>  
       </div>      

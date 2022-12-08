@@ -1,26 +1,31 @@
 
 import React from 'react';
+import { useState } from 'react';
 import "./Home.css";
 import CardHome from '../../component/CardHome/CardHome';
 import SolutionHome from '../../component/SolutionHome/SolutionHome';
 import Header from '../../component/Header';
+import Breadcrumb from '../../component/Breadcrumb'
 import SearchBar from '../../component/SearchBar/SearchBar';
 import NoteCard from '../../component/NoteCard/NoteCard';
 
 
 const Home = () => {
 
-
-    
+    const [crumbs, setCrumbs] = useState(['Home']);
+    const selected = crumb => {
+        console.log(crumb);
+      }
 
   return (
-
     <div style={{minHeight: "170vh",position: "relative"}}>
-        
+        <div>
+            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+        </div>
+
         <div>
             <img class="home-image" src="img/logo-no-background.png" alt="Logo"/>
         </div>
-        
         <SearchBar/>        
         
         

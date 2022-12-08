@@ -3,6 +3,7 @@ import "./NewLogin.css";
 import Header from "../Header";
 import {Form, Button} from "react-bootstrap";
 import { useNavigate } from 'react-router';
+import Breadcrumb from '../../component/Breadcrumb'
 
 function NewSignUp(props) {
   const initialValues = {email: "", password: "" };
@@ -11,6 +12,10 @@ function NewSignUp(props) {
   const [isSubmit, setIsSubmit] = useState(false);
   const[email , setEmail] = useState('');
   const [pwd, setPwd] = useState('');
+  const [crumbs, setCrumbs] = useState(['Home','Login','Signup']);
+  const selected = crumb => {
+      console.log(crumb);
+    }
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -114,7 +119,9 @@ function NewSignUp(props) {
   return (
     <>
     
-  
+    <div>
+            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+        </div>
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
       <form className="rounded p-4 p-sm-3" style={{marginTop:"200px"}} onSubmit={handleSubmit}>

@@ -4,7 +4,11 @@ import {FlashcardComponent} from 'react-flashcard'
 import {FiSearch} from 'react-icons/fi'
 import {Row,Col, Form} from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import Breadcrumb from '../../component/Breadcrumb'
+
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+
 import {Container, Button} from 'react-bootstrap';
 import Cards from '../FlashCards/Cards';
 import Header from '../Header';
@@ -12,6 +16,7 @@ import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import { message } from 'antd';
 import { propTypes } from 'react-bootstrap/esm/Image';
+
 
 
 const uberFields = [
@@ -393,6 +398,11 @@ const SearchResults = (props) => {
     }
   ]
 
+  const [crumbs, setCrumbs] = useState(['Home','SearchResults']);
+  const selected = crumb => {
+    console.log(crumb);
+  }
+
   const {state} = useLocation();
   console.log(state);
   const [search, setSearch] = useState(state.search);
@@ -492,10 +502,17 @@ return (
     return(
         <>
             {/* <Header/> */}
-            
+            <div>
+            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+            </div>
             <div className='home' style={{marginTop:"50px"}}>            
 
+      
+                <div className="SearchContainer" class="d-flex justify-content-center">
+
+
                 {/* <div className="SearchContainer" class="d-flex justify-content-center">
+
                   <Form className='form-control form-control-lg form-control-borderless'>
                     
                       <Form.Control  style={{width:"800px"}} onKeyDown={(e)=>handleEnter(e)}  value={msg} type="text" placeholder="Search here" onChange={handleChange} />           
