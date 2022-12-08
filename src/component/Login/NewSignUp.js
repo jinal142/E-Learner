@@ -117,7 +117,7 @@ function NewSignUp(props) {
   
     <div className="container">
     <div className="FormContainer d-flex justify-content-center align-items-center">
-      <form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>
+      <form className="rounded p-4 p-sm-3" style={{marginTop:"200px"}} onSubmit={handleSubmit}>
         
         <div className='LogoContainer'>
             <img src="img/logo-no-background.png" alt="Logo" className="LogoLogin" onClick= {()=> navigate('/',{replace : true})}/>

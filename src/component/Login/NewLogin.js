@@ -59,7 +59,7 @@ function NewLogin(props) {
     
         if((values.email==="abc@gmail.com" && values.password==="1234") || 
         (values.email==="xyz@gmail.com" && values.password==="2468") || 
-        (values.email==="pqr@gmail.com" && values.password==="1010") ||(values.email===state[0] && values.password===state[1]) ) {
+        (values.email==="pqr@gmail.com" && values.password==="1010") ) {
             setIsSubmit(true);
             props.setHeaderShow(true);
             navigate('/bookAppointment',{replace : true});
