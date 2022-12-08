@@ -117,7 +117,7 @@ const Edit = (props)=>{
                     <Modal.Body>
                         <div>
                             
-                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value} />
+                            <DatePicker onChange={(e) => { setValue(e); handleChange(e); }} value={value}  minDate={new Date()}/>
                             {timeDisplay ? <Time time = {availableTime.filter((ele) => ele.id === id)[0].available} method = {handleTime}/> : null}
                                      
                            

@@ -33,9 +33,12 @@ const Header = (props) => {
               </Nav>
             
             <div > 
-                { props.headerShow ? <Dropdown>  
+                { props.headerShow ? <div style={{display:'flex', justfiyContent : 'flex-end'}}>
+                  
+                <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/bookAppointment"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Talk with Expert</b></Nav.Link></Nav>
+                  <Dropdown>  
                         <Dropdown.Toggle variant="dark" id="dropdown-basic">  
-                        <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"5px", width:"90px", height:"40px"}}/></Navbar.Brand>
+                        <Navbar.Brand><FaUserCircle style={{color:'white', marginRight:"30px", width:"90px", height:"40px"}}/></Navbar.Brand>
                         </Dropdown.Toggle>  
     
                         <Dropdown.Menu>  
@@ -44,7 +47,8 @@ const Header = (props) => {
                             <Dropdown.Item href="#/action-3"><FiSettings/>Settings</Dropdown.Item>  
                             <Dropdown.Item as ={Link} to = "/" onClick={() => {props.setHeaderShow(false); props.setIsLogin(false)}}><MdLogout/>Logout</Dropdown.Item>  
                         </Dropdown.Menu>  
-                    </Dropdown> : <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
+                    </Dropdown> 
+                  </div>: <Nav className="d-flex justify-content-center align-items-center"><Nav.Link as ={Link} to ="/newlogin"  style={{marginRight:"20px" ,textDecoration: 'underline', fontSize:"20px", cursor:"pointer"}}><b>Login</b></Nav.Link></Nav>
                   
                 
                 }           
