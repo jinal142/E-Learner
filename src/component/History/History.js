@@ -1,11 +1,21 @@
 import React from 'react'
+import  { useState } from 'react'
 import Header from '../Header'
 import Table from 'react-bootstrap/Table';
 import { useLocation } from 'react-router';
+import Breadcrumb from '../../component/Breadcrumb'
 
 const History =() => {
+    const [crumbs, setCrumbs] = useState(['Home','Login','MyHistory']);
+  const selected = crumb => {
+    console.log(crumb);
+  }
+
   return (
     <>
+    <div>
+            <Breadcrumb crumbs={ crumbs } selected={ selected }  />
+        </div>
     {/* <Header path = {useLocation().pathname}/> */}
     <div style={{justifyContent:'center'}}>
       <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
