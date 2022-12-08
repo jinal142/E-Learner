@@ -379,6 +379,7 @@ const SearchResults = (prop) => {
   console.log(state);
   const [search, setSearch] = useState("");
   const [msg, setMsg] = useState(state.search);
+
   const handleChange = (e)=>{
     
     setMsg(e.target.value);
@@ -386,7 +387,19 @@ const SearchResults = (prop) => {
 
   const  handlSearch = () => {
     console.log("in search");
-    navigate("/results",{ state : {search: msg} },{replace:true})
+    const searchTerm = msg.toUpperCase();
+    const allowedSearchTerms = new Set(['UBER', 'VENMO', 'AIRBNB', 'DOORDASH', 'WALMART'])
+
+
+    if (!allowedSearchTerms.has(searchTerm)) {
+      navigate("/",{replace:true})
+      alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
+      return
+    } else {
+      navigate("/results",{ state : {search: msg} },{replace:true})
+    }
+    
+    
     
 
 }
@@ -401,16 +414,6 @@ const SearchResults = (prop) => {
 
   const handleLogin =()=>{
     navigate("/login",{replace:true})
-  }
-
-  const handlalert =()=>{
-    alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
-  }
-
-  const errorsearch = () => {
-    navigate("/", { replace: true })
-    handlalert()
-    
   }
     
     return(
@@ -452,8 +455,7 @@ const SearchResults = (prop) => {
                     msg.toUpperCase() === "VENMO"? <Cards dataSource = {venmoFields}/> :
                     msg.toUpperCase() === "AIRBNB"? <Cards dataSource = {airbnbFields}/> :
                     msg.toUpperCase() === "DOORDASH"? <Cards dataSource = {doordashFields}/> :
-                    msg.toUpperCase() === "WALMART"? <Cards dataSource = {walmartFields}/> :
-                    msg.toUpperCase() !== "UBER" || "VENMO" || "AIRBNB" || "DOORDASH" || "WALMART"? errorsearch():null
+                    msg.toUpperCase() === "WALMART"? <Cards dataSource = {walmartFields}/> : null
                     }
                     
                   </div>

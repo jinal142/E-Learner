@@ -11,8 +11,6 @@ const SearchBar = () =>{
     //const [display, setDisplay] = useState(false);
     const navigate = useNavigate()
     
-    
-    
     const  handlSearch = () => {
 
             navigate("/results",{ state : {search} },{replace:true})
@@ -32,7 +30,18 @@ const SearchBar = () =>{
     
         if(e.key === "Enter"){
             // console.log(e.target.value)
-             handlSearch();
+            console.log("in search");
+            const searchTerm = search.toUpperCase();
+            const allowedSearchTerms = new Set(['UBER', 'VENMO', 'AIRBNB', 'DOORDASH', 'WALMART'])
+
+
+            if (!allowedSearchTerms.has(searchTerm)) {
+                //navigate("/",{replace:true})
+                alert("Please Search from one of the following topics: \n Walmart, Uber, Venmo, Doordash, Airbnb");
+                return
+            } else {
+                handlSearch()
+             }
         }
     }
    return(
