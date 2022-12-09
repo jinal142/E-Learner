@@ -15,7 +15,7 @@ const MyAppointments =(props) => {
 
   const[modalAppoitment, setModalAppoitment] = useState({});
 
-  const [crumbs, setCrumbs] = useState(['Home','Login','MyAppointments']);
+  const [crumbs, setCrumbs] = useState(['Home','My Profile','MyAppointments']);
   const selected = crumb => {
     console.log(crumb);
   }

@@ -6,7 +6,7 @@ import { useLocation } from 'react-router';
 import Breadcrumb from '../../component/Breadcrumb'
 
 const History =() => {
-    const [crumbs, setCrumbs] = useState(['Home','Login','MyHistory']);
+    const [crumbs, setCrumbs] = useState(['Home','My Profile','MyHistory']);
   const selected = crumb => {
     console.log(crumb);
   }
