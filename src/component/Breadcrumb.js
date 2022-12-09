@@ -2,8 +2,6 @@ import React from 'react';
 
 const breadcrumb = {
   backgroundColor: 'black',
-  border: '1px solid rgba(0, 0, 0, 0.125)',
-  borderRadius: '0.37rem',
   color:'white',
 
 }
@@ -15,7 +13,7 @@ function Breadcrumb(props) {
   }
 
   return (
-    <nav className="row justify-content-center">
+    <nav className="row justify-content-center" style={{width: "100.75%"}}>
       <ol className="breadcrumb" style={ breadcrumb }>
         {
           props.crumbs.map((crumb, ci) => {
