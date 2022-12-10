@@ -50,10 +50,13 @@ const handleClose = () =>{
       <div>
             <Breadcrumb crumbs={ crumbs } selected={ selected }  />
         </div>
+        <div class="d-flex justify-content-center" style={{alignItems:"center"}}>
+        <h2 style={{color :'black', marginTop:"50px", fontSize:"50px", textShadow:"5px 5px 5px rgba(0,0,0,.4)"}}>My next Appointments</h2>  
+      </div> 
 
-    <div>
+    <div style={{margin:'50px',padding:'50px'}}>
        <Table striped bordered hover>
-        <thead>
+        <thead className='table-dark'>
           <tr>
             <th>Name</th>
             <th>Date</th>
